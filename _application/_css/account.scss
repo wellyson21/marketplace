@@ -1,0 +1,1261 @@
+$primaryColor: rgb(55,51,102);
+$secondaryColor: rgb(120,196,237);
+$tertiaryColor: white;
+
+#header {
+
+  .wrapper {
+
+    .top-header-box {
+
+      .info {
+
+        li {
+          &.user{
+
+            a{
+              color: rgb(120,196,237)
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#main-content{
+
+  padding: 30px 0;
+
+    a{
+    text-decoration: none;
+  }
+
+  .pagination-box{
+    margin-top: 20pt;
+    display: table !important;
+    .pagination-container {
+      display: table-cell;
+      margin: 0;
+      padding: 0 !important;
+  
+      list-style: none;
+      li{
+        float: left;
+        border-radius: 100%;
+        text-align: center;
+        margin: 0 1pt !important;
+        box-shadow: 0 0 3pt #a3a3a3;
+        width: auto !important;
+        a{
+          font: 600 7pt "Tahoma";
+          display: table-cell;
+          text-align: center;
+          width: 18px;
+          height: 18px;
+          vertical-align: middle;
+        }
+      }
+      .activePage{
+  
+        background-color: #9c9c9c !important;
+        a{
+  
+          color: whitesmoke !important;
+        }
+      }
+  
+      .disabledPage{
+  
+        a{
+          color: #83828b !important;
+        }
+      }
+  
+      .next,.prev{
+        border: none;
+        box-shadow: none;
+        a {
+          color: #9c9c9c !important;
+          font-size: 12pt;
+        }
+      }
+    }
+  }
+
+  .card {
+    z-index: 0 !important;
+    .card-header {
+      h4{
+        position: relative;
+        margin-bottom: 15px !important;
+        button.btnCreate {
+          width: 32px;
+          height: 32px;
+          padding: 0;
+          position: absolute;
+          right: 0;
+          top: -8px;
+        }
+      }
+    }
+    .card-body {
+      position: relative;
+      .btnEdit {
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        border-radius: 100%;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        i {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .contCustomCard{
+    margin-bottom: 30px;
+    .customCard{
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 3px 3px 3px #ddd;
+      .customCard-header {
+        $size: 90px;
+        position: relative;
+        cursor: pointer;
+        margin-bottom: 10px;
+        .thumbnail {
+          width: $size;
+          height: $size;
+          border-radius: 5px;
+          margin-right: 10px;
+          float: left;
+        }
+        .btnEdit{
+          width: 30px;
+          height: 30px;
+          padding: 0;
+          border-radius: 100%;
+          position: absolute;
+          right: -3px;
+          top: -7px;
+          i{
+            font-size: 13px;
+          }
+        }
+        .customCard-data {
+          min-height: $size;
+          border: 1px solid transparent;
+          .title {
+            font-weight: bolder;
+            font-size: 17px;
+            color: #444;
+            margin-top: 0 !important;
+          }
+
+          .subtitle {
+            margin-top: -8px;
+            font-size: 12px;
+            color: #555;
+          }
+          .category {
+            color: coral;
+            float: left;
+          }
+          .date {
+            color: #999;
+            float: right;
+          }
+          .category,
+          .date {
+            margin-top: 10px;
+            font-size: 11px;
+          }
+
+          .country{
+
+            display: block;
+            margin-top: 0;
+          }
+        }
+      }
+      .customCard-body{
+        border-top: 1px solid #ddd;
+        padding-top: 10px;
+        p{
+          font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+          font-size: 13px;
+          margin-bottom: 0;
+        }
+
+        .title{
+
+          font: 400 0.95em "Tahoma";
+          margin-bottom: 10px;
+          color: #4c4c4c;
+        }
+
+        .content{
+
+          font: 400 0.9em "Tahoma";
+          color: grey;
+          padding: 0 10px 10px 10px;
+        }
+
+      }
+    }
+  }
+
+  .loader{
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent;
+    display: block;
+
+    .table{
+      display: table;
+      margin: auto;
+      height: 100%;
+      border: none;
+      .cell{
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+
+        i{
+
+          color: $primaryColor;
+          font-size: 2.5em;
+        }
+      }
+    }
+
+  }
+
+  .side-menu{
+
+    //padding: 10px;
+    //background: whitesmoke;
+    //background: linear-gradient(rgb(217, 223, 241), rgb(216, 226, 221));
+    //background: linear-gradient(rgb(217, 223, 241), rgb(216, 226, 221));
+    //background: linear-gradient(rgb(217, 223, 241), rgb(55,51,102));
+    //background: linear-gradient(rgb(217, 223, 241) 20%, rgb(55,51,102) 120%);
+    //background: linear-gradient(to bottom, rgb(121, 112, 224), rgb(55,51,102));
+    //background: rgb(78, 128, 155);
+    //background: $primaryColor;
+    box-shadow: 2px 0 2px rgba(208, 208, 208, 0.91);
+
+    .activeSideMenuPage{
+      background: rgb(116, 186, 225) !important;
+      a{
+        color: white;
+      }
+    }
+
+    ul{
+      list-style: none;
+      //margin-top: 10px;
+      //padding: 10px;
+      li{
+
+        padding: 0 10px;
+        transition: 0.4s;
+
+        &:hover{
+
+          transition: 0.4s;
+          background: rgb(116, 186, 225) !important;
+          a{
+            color: white;
+          }
+        }
+
+        a{
+
+          //background: rgb(104, 170, 205);
+          padding: 15px 0;
+          display: block;
+          width: 100%;
+          height: 100%;
+          color: gray;
+          //color: grey;
+          //color: whitesmoke;
+          font: 400 0.8em "Tahoma";
+          text-transform: uppercase;
+          //border-bottom: 1px solid rgba(98, 160, 195, 0.87);
+
+          i{
+
+            margin-right: 5px;
+          }
+        }
+        border-bottom: 1px solid rgba(66, 61, 123, 0.17);
+        //border-bottom: 1px solid rgba(98, 160, 195, 0.87);
+        //border-bottom: 1px solid rgb(51, 84, 102);
+      }
+    }
+  }
+  .content{
+    position: relative;
+    .wrapper{
+
+      padding-bottom: 30px;
+    }
+
+    #btnBackPage{
+      padding-left: 10px;
+      padding-right: 10px;
+      background:  transparent;
+      vertical-align: middle;
+
+      //i{
+
+      color: grey;
+      //}
+
+
+      &:active{
+        border: 2px solid transparent !important;
+      }
+
+      &:hover{
+
+        color: #5c5c5c !important;
+      }
+
+      span{
+        position: relative;
+        top: -5px;
+      }
+    }
+
+    #dashboardPage{
+
+
+      .status{
+
+
+        margin-top: 30px;
+
+        .box{
+
+          div{
+
+            display: table;
+            margin: auto;
+            box-shadow: 0 0 3px lightgrey;
+            padding: 15px;
+
+            .label{
+
+              font: 400 0.9em "Tahoma";
+              color: #7a7f7e;
+              display: block;
+              width: 100%;
+              text-align: center;
+            }
+
+            .value{
+
+              font: 600 2.5em "Tahoma";
+              color: lightblue;
+              display: block;
+              width: 100%;
+              text-align: center;
+            }
+          }
+        }
+
+      }
+
+      .payTax{
+
+        margin-top: 30px;
+
+        img{
+          width: 150px;
+          display: table;
+          margin: 0 auto 10px auto;
+        }
+
+        p{
+
+          font: 500 1.5em "Tahoma";
+          text-align: center;
+          margin-bottom: 40px;
+          color: gray;
+        }
+
+        .notification{
+          display: none;
+        }
+
+        form{
+
+          display: table;
+          width: 245px;
+          margin: auto;
+
+          //background: rgb(212, 221, 246);
+          box-shadow: 0 0 30px #cfcfcf;
+          padding: 15px;
+
+
+          input{
+            width: 100%;
+            height: 37px;
+
+            &[type=text]{
+
+              border: 1px solid $secondaryColor;
+              color: #9a9a9a;
+            }
+
+            &[type=submit]{
+
+              margin-top: 5px;
+              border: 1px solid transparent;
+              background: $secondaryColor;
+              color: white;
+              cursor: pointer;
+
+              &:hover{
+
+                background: #5991af;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    #profilePage{
+
+      .header{
+
+        height: 90px;
+        background: rgba(105, 172, 208, 0.47);
+        position: relative;
+
+
+        .edit-button{
+
+          float: right;
+          margin: 15px 10px 0 0;
+
+          background: transparent;
+          color: white;
+          cursor: pointer;
+        }
+
+        .photo-container{
+
+          margin: auto;
+          height: 90px;
+          width: 90px;
+          border-radius: 100%;
+          display: table;
+          clear: both;
+          position: relative;
+          border: 2px solid white;
+
+          img{
+
+            opacity: 0;
+            background: white;
+            height: 90px !important;
+            width: 90px !important;
+            border-radius: 100% !important;
+          }
+
+          i{
+
+            background: $secondaryColor;
+            padding: 5px;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            bottom: 25px;
+            border-radius: 100%;
+            z-index: 10;
+          }
+        }
+
+
+      }
+
+      .contacts, .address{
+
+        padding: 35px 10px 10px 10px;
+
+        h6{
+
+          font: 500 1.3em "Tahoma";
+          color: gray;
+          margin-bottom: 15px;
+        }
+
+        i{
+
+          font-size: 0.9em;
+          //margin-right: 5px;
+        }
+
+        .fa-envelope{
+
+          color: orange;
+        }
+
+        .fa-phone{
+
+          color: cornflowerblue;
+        }
+
+        p{
+
+          span{
+
+            font: 500 0.8em "Tahoma";
+            color: gray;
+          }
+        }
+      }
+
+
+      .address{
+
+        span{
+
+          display: block;
+        }
+
+        .no-data{
+
+          color: grey;
+          text-align: center;
+        }
+      }
+
+      &.edit{
+
+        padding-top: 15px;
+
+        .profileForm{
+
+          .form-group{
+            padding: 5px 5px;
+          }
+
+          input{
+            height: 35px;
+            padding: 10px;
+            border: 1px solid grey;
+            width: 100%;
+
+            &[type=submit]{
+
+              margin: 0 5px;
+              width: auto;
+              padding: 5px 20px;
+              border: 1px solid transparent;
+              background: $secondaryColor;
+              color: white;
+              cursor: pointer;
+              &:hover{
+
+                background: #67a8cb;
+              }
+            }
+          }
+
+          .alert{
+            margin: 5px;
+            color: white;
+            display: none;
+          }
+        }
+
+      }
+
+    }
+
+    #advertsPage{
+
+      .header{
+        border-bottom: 1px solid rgb(107, 175, 212);
+
+        p{
+
+          float: left;
+          width: 50px;
+          height: 50px;
+          background: rgb(107, 175, 212);
+          display: table;
+
+          i{
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 1.5em;
+            color: white;
+          }
+        }
+        .addAdvert{
+          float: right;
+          margin-top: 15px;
+          background: transparent;
+          i{
+
+            color: green;
+            font-size: 1.5em;
+            cursor: pointer;
+          }
+        }
+
+      }
+
+      .payTax{
+
+        margin: 30px 0;
+
+        img{
+          width: 150px;
+          display: table;
+          margin: 0 auto 10px auto;
+        }
+
+        .title{
+
+          margin-bottom: 0;
+          font-style: italic;
+        }
+
+        .subtitle{
+
+          font-style: italic;
+        }
+
+        p{
+
+          font: 500 1.5em "Tahoma";
+          text-align: center;
+          margin-bottom: 40px;
+          color: gray;
+        }
+
+        .notification{
+          display: none;
+        }
+
+        form{
+
+          display: table;
+          margin: auto;
+          box-shadow: 0 0 30px #cfcfcf;
+          padding: 15px;
+
+          input{
+            width: 100%;
+            height: 37px;
+
+            &[type=text]{
+
+              border: 1px solid $secondaryColor;
+              color: #9a9a9a;
+            }
+
+            &[type=submit]{
+
+              margin-top: 5px;
+              border: 1px solid transparent;
+              background: $secondaryColor;
+              color: white;
+              cursor: pointer;
+
+              &:hover{
+
+                background: #5991af;
+              }
+            }
+          }
+
+        }
+
+      }
+
+      .content{
+
+
+        .no-proposal{
+          margin-top: 30px;
+          p{
+            text-align: center;
+            i{
+              display: block;
+              font-size: 2.5em;
+              color: #747474;
+            }
+            span{
+              margin-top: 5px;
+              display: block;
+              font: 400 0.95em "Tahoma";
+              color: gray;
+            }
+          }
+        }
+
+        ul{
+
+          list-style: none;
+          display: block;
+          width: 100%;
+          li{
+
+            width: 100%;
+            padding: 10px;
+            display: block;
+            box-shadow: 0 0 5px lightgrey;
+            cursor: pointer;
+            margin-top: 15px;
+
+            img{
+
+              width: 80px;
+              height: 80px;
+              border-radius: 100%;
+              float: left;
+            }
+
+            .right-info{
+              float: left;
+              margin-left: 10px;
+            }
+
+            .top-info{
+
+              position: relative;
+
+              .name{
+
+                margin-top: 10px;
+                font: 400 1.2em "Tahoma";
+                color: gray;
+              }
+
+              .price{
+
+                font: 400 0.9em "Tahoma";
+                color: #c69e2f;
+              }
+
+              .date{
+
+                font: 400 0.8em "Tahoma";
+                color: #a3605a;
+              }
+
+              i{
+
+                position: absolute;
+                top: 35px;
+                right: 10px;
+                color: $secondaryColor;
+                font-size: 1.3em;
+                //cursor: pointer;
+                cursor: default;
+                transition: 0.3s;
+
+                &:hover{
+
+                  transition: 0.3s;
+                  color: #62a2c3;
+                }
+
+
+                &.fa-times-circle{
+
+                  color: #ff6466;
+                  right: 40px;
+                }
+              }
+            }
+
+            .bottom-info{
+
+              border-top: 1px solid rgba(218, 218, 218, 0.86);
+              margin-top: 10px;
+              margin-bottom: 0;
+              padding: 0;
+              display: none;
+              clear: both;
+
+              p{
+                text-align: center;
+                font: 400 1.2em "Tahoma";
+                color: gray;
+                margin: 10px 0;
+              }
+
+              .wrapper{
+
+                display: table;
+                margin: auto;
+
+                img{
+
+                  float: none;
+                  display: table;
+                  margin: auto;
+                }
+
+                .right-info{
+
+                  margin-top: 10px;
+                  float: none;
+                }
+
+                p{
+
+                  margin: 0;
+                  font: 300 0.85em "Tahoma";
+                }
+              }
+
+            }
+          }
+        }
+      }
+
+    }
+
+    #viewAdvert{
+      .contCustomCard{
+        .customCard{
+          .customCard-header{
+            position: relative;
+            .create{
+              float: none;
+              position: absolute;
+              bottom: 0;
+              right: 5pt;
+            }
+
+            .country{
+
+              text-transform: capitalize;
+            }
+            .date,.category{
+
+              display: block;
+              margin-top: 0 !important;
+              margin-bottom: 3px;
+            }
+
+            .category{
+
+              margin-bottom: 10px;
+              float: none;
+            }
+            .subtitle{
+
+              display: block;
+            }
+
+            .state{
+
+              text-transform: uppercase;
+            }
+
+
+            .customCard-data{
+              .expire{
+                display: block;
+                margin-top: -10pt;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #createUpdateAdvertPage{
+
+      .pricefield{
+        height: 40px !important;
+      }
+
+      .customCard-header {
+
+      }
+      .customCard-body {
+        margin-top: 10px !important;
+        section {
+          .title {
+            font-size: 0.75em;
+            font-style: italic;
+            color: indianred;
+          }
+          .content {
+            margin-left: 15px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      .alert{
+
+        margin: 10px;
+        color: white;
+      }
+
+      #formPromotion{
+        .contImages{
+          position: relative;
+        }
+        .removeImage{
+          position: absolute;
+          right: 3px;
+          top: 3px;
+          border-radius: 100%;
+          width: 20px;
+          height: 20px;
+          border: none;
+          background: red;
+          padding: 0;
+          color: white;
+          font: 600 10pt "Tahoma";
+          z-index: 100;
+        }
+      }
+
+
+
+      form{
+
+        .form-group{
+          padding: 0 10px;
+          margin-top: 10px;
+        }
+
+        input[type=text],input[type=number],textarea,select{
+
+          width: 100%;
+          resize: none;
+          border: 1px solid lightgrey;
+          padding: 10px;
+        }
+
+        input[type=text],input[type=number]{
+
+          height: 35px;
+        }
+
+        label{
+
+          color: #757575;
+          //font: ;
+        }
+
+        .contBlockImages{
+          padding: 0 15px;
+          margin-bottom: 15px;
+          input{
+            display: none;
+          }
+          small{
+            color: #aaa;
+          }
+          .contImages{
+            border-radius: 4px;
+            border: 2px solid #fff;
+            box-shadow: 2px 2px 5px #ccc;
+            transition: .5s;
+            position: relative;
+            cursor: pointer;
+            img{
+              width: 100%;
+              height: 100%;
+              border-radius: inherit;
+            }
+            .contSkin{
+              border-radius: inherit;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              .overlay{
+                border-radius: inherit;
+                width: 100%;
+                height: 100%;
+                display: table;
+                background: rgba(0, 0, 0, 0.30);
+                opacity: 0;
+                text-align: center;
+                transition: .5s;
+                small{
+                  font-size: 1em;
+                  color: #fff;
+                  display: table-cell;
+                  vertical-align: middle;
+                }
+                &:hover{
+                  opacity: 1;
+                  transition: .5s;
+                }
+              }
+
+            }
+          }
+          .contPromotionImage{}
+          .contOthersImages{
+            ul{
+              list-style: none;
+              padding: 0;
+              text-align: center;
+              li{
+                display: inline-table;
+                width: 25%;
+                .contImages{
+                  small{
+                    font-size: .75em !important;
+                  }
+                  img{
+                    height: 100%;
+                  }
+                }
+              }
+            }
+
+            input{ display: none; }
+          }
+        }
+      }
+    }
+
+    #proposalPage{
+
+      .header{
+        background: rgba(105, 172, 208, 0.47);
+        margin-bottom: 20px;
+        ul{
+          list-style: none;
+          display: table;
+          margin: auto;
+          padding: 10px;
+          li{
+            float: left;
+            padding: 10px 20px;
+            border: 1px solid rgb(116, 186, 225) !important;
+            //color: #6e6e6e;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover{
+
+              transition: 0.3s;
+              background: $primaryColor;
+            }
+
+            &:first-child{
+              margin-right: 1px;
+            }
+          }
+        }
+      }
+
+      .content{
+
+        .no-proposal{
+          margin-top: 30px;
+          p{
+            text-align: center;
+            i{
+              display: block;
+              font-size: 2.5em;
+              color: #747474;
+            }
+            span{
+              margin-top: 5px;
+              display: block;
+              font: 400 0.95em "Tahoma";
+              color: gray;
+            }
+          }
+        }
+
+        ul{
+
+          list-style: none;
+          display: block;
+          width: 100%;
+          li{
+
+            width: 100%;
+            padding: 10px;
+            display: block;
+            box-shadow: 0 0 5px lightgrey;
+            margin-top: 10px;
+
+            &:first-child{
+
+              margin-top: 0;
+            }
+
+            img{
+
+              width: 100px;
+              height: 100px;
+              border-radius: 100%;
+              float: left;
+            }
+
+            .right-info{
+              float: left;
+              margin-left: 10px;
+            }
+
+            .top-info{
+
+              position: relative;
+
+              .name{
+
+                margin-top: 10px;
+                font: 400 1.2em "Tahoma";
+                color: gray;
+              }
+
+              .price{
+
+                font: 400 0.9em "Tahoma";
+                color: #c69e2f;
+              }
+
+              .priceLabel{
+
+                font: 400 0.8em "Tahoma";
+                color: #a3605a;
+              }
+
+              .date{
+
+                font: 400 0.7em "Tahoma";
+                color: #a3605a;
+                display: block;
+              }
+
+              i{
+
+                position: absolute;
+                top: 40px;
+                right: 10px;
+                color: $secondaryColor;
+                font-size: 1.5em;
+                cursor: pointer;
+                transition: 0.3s;
+
+                &:hover{
+
+                  transition: 0.3s;
+                  color: #62a2c3;
+                }
+
+
+                &.fa-times-circle{
+
+                  color: #ff6466;
+                  right: 38px;
+                }
+              }
+            }
+
+            .bottom-info{
+
+              border-top: 1px solid rgba(218, 218, 218, 0.86);
+              margin-top: 10px;
+              margin-bottom: 0;
+              padding: 0;
+              display: none;
+              clear: both;
+
+              p{
+                text-align: center;
+                font: 400 1.2em "Tahoma";
+                color: gray;
+                margin: 10px 0;
+              }
+
+              .wrapper{
+
+                display: table;
+                margin: auto;
+
+                img{
+
+                  float: none;
+                  display: table;
+                  margin: auto;
+                }
+
+                .right-info{
+
+                  margin-top: 10px;
+                  float: none;
+                }
+
+                p{
+
+                  margin: 0;
+                  font: 300 0.85em "Tahoma";
+                }
+              }
+
+            }
+          }
+        }
+      }
+
+    }
+
+
+
+  }
+
+}
+
+
+@media (min-width: 0) and (max-width: 768px){
+
+  #main-content {
+
+    a{
+      text-decoration: none;
+    }
+
+    padding-bottom: 30px;
+
+    .side-menu{
+
+      margin-top: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 5px #7a7a7a;
+
+      ul{
+
+        margin-top: 0;
+      }
+
+      min-height: auto !important;
+      height: auto !important;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+<div id="mainPage" class="col2-to29-md">
+
+  <div class="card">
+    <div class="card-header card-header-icon">
+      <div class="card-icon">
+        <i class="material-icons">settings
+        </i>
+      </div>
+      <h4 class="card-title">
+        <span>General Settings</span>
+      </h4>
+    </div>
+
+    <form id="settingsForm">
+
+
+
+      <h4 style="margin: -10px 0 10px;">Sistema</h4>
+      <div class="medias">
+
+        <h4 style="margin: -10px 0 10px;">Logo</h4>
+        <div class="logo">
+          <div>
+            <img src="{{ data.logo }}"/>
+            <!--<img src="https://firebasestorage.googleapis.com/v0/b/madefrio-977a2.appspot.com/o/logo%2Flogo.png?alt=media"/>-->
+            <input type="file" class="image hide" name="image"/>
+            <button data-ng-click="choseImage($event)"><i class="material-icons">collections</i></button>
+          </div>
+        </div>
+
+        <div class="fb">
+          <label>nome do Sistema:</label>
+          <input type="text" class="form-control" name="systemName" spellcheck="false" value="{{ data.systemName }}" required/>
+        </div>
+
+      </div>
+
+
+      <h4 style="margin: -10px 0 10px;">Medias sociais</h4>
+      <div class="medias">
+        <div class="fb">
+          <label>Facebook:</label>
+          <input type="text" class="form-control" name="facebook" spellcheck="false" value="{{ data.facebook }}"/>
+        </div>
+        <div class="it">
+          <label>Instagram:</label>
+          <input type="text" class="form-control" name="instagram" spellcheck="false" value="{{ data.instagram }}"/>
+        </div>
+        <div class="tw">
+          <label>Twitter:</label>
+          <input type="text" class="form-control" name="twitter" spellcheck="false" value="{{ data.twitter }}"/>
+        </div>
+      </div>
+
+      <h4 style="margin: -10px 0 10px;">Caixa de Email</h4>
+      <div class="medias">
+        <div>
+          <label>Email:</label>
+          <input type="text" class="form-control" name="email" spellcheck="false" value="{{ data.email }}" required/>
+        </div>
+        <div >
+          <label>Senha:</label>
+          <input type="text" class="form-control" name="password" spellcheck="false" value="{{ data.password }}" required/>
+        </div>
+      </div>
+
+
+      <h4 style="margin: -10px 0 10px;">Anúncios</h4>
+
+      <div style="padding-left: 10px;">
+
+        <div class="fee">
+          <label>Taxa Mensal:</label>
+          <input type="text" class="form-control" name="monthlyFee" spellcheck="false" required value="{{ data.fee }}"/>
+        </div>
+
+        <label>Metodos de pagamento:</label>
+
+        <div style="border: 2px solid #eee; border-radius: 5px; padding: 15px 20px 20px; margin-bottom: 10px;">
+
+          <p style="color: #003087; font-size: 18px; font-weight: 500;"><i class="fab fa-paypal" style="margin-right: 5px;"></i> PayPal</p>
+
+          <div style="margin-bottom: 10px;">
+            <label>Client ID:</label>
+            <input type="text" class="form-control" name="clientId" spellcheck="false" value="{{ data.clientId }}" required/>
+          </div>
+
+          <div>
+            <label>App Secret:</label>
+            <input type="text" class="form-control" name="appSecret" spellcheck="false" value="{{ data.appSecret }}" required/>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="alert alert-success" style="display: none">
+        As alterações foram salvas com successo.
+      </div>
+
+      <div class="alert alert-danger hide" style="display: none">
+        Erro ao salvar as alterações.
+      </div>
+
+      <button type="submit" class="btn btn-default" style="float: right; margin-top: 10px;">Save</button>
+    </form>
+  </div>
+
+</div>

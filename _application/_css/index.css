@@ -1,0 +1,222 @@
+#slideMain {
+  opacity: 0;
+  padding: 0 !important;
+  margin-top: 50px !important; }
+  #slideMain article {
+    height: 440px;
+    margin: 0 !important;
+    border: 2px solid #b4b4b4;
+    overflow: hidden; }
+    #slideMain article .slideControllers {
+      width: 100%;
+      display: inline-block;
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      z-index: 2;
+      padding: 5px;
+      font-size: .8em;
+      color: #eee;
+      cursor: pointer; }
+      #slideMain article .slideControllers .prev, #slideMain article .slideControllers .next {
+        border: none;
+        font-size: 2em;
+        color: #fff;
+        background: transparent;
+        display: none; }
+      #slideMain article .slideControllers .prev {
+        float: left; }
+      #slideMain article .slideControllers .next {
+        float: right; }
+      #slideMain article .slideControllers .controllers {
+        text-align: center; }
+        #slideMain article .slideControllers .controllers .play:hover, #slideMain article .slideControllers .controllers .stop:hover {
+          color: #c0c0c0; }
+        #slideMain article .slideControllers .controllers .circles {
+          margin: 0 10px; }
+          #slideMain article .slideControllers .controllers .circles i {
+            margin: 0 2px; }
+            #slideMain article .slideControllers .controllers .circles i:hover {
+              color: #c0c0c0; }
+    #slideMain article ul {
+      max-height: 430px !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      padding: 0 !important; }
+      #slideMain article ul li {
+        height: 100%;
+        padding: 0 !important;
+        margin: 0 !important; }
+        #slideMain article ul li li:first-child {
+          opacity: 0; }
+        #slideMain article ul li img {
+          width: 100%;
+          height: 100%; }
+
+#homeProductsCategories {
+  height: 440px !important;
+  margin-top: 40px !important;
+  padding: 1px 0; }
+  #homeProductsCategories .wrapper {
+    height: 100%;
+    width: 100%;
+    background: #e6e6e6f3;
+    box-shadow: 0 0 3px lightgray; }
+    #homeProductsCategories .wrapper h6 {
+      text-align: center;
+      text-transform: uppercase;
+      font: 500 1.2em "tahoma";
+      color: #7e7c7c;
+      padding: 20px; }
+    #homeProductsCategories .wrapper ul {
+      margin-top: -10px;
+      padding: 20px; }
+      #homeProductsCategories .wrapper ul li {
+        list-style-type: none;
+        position: relative; }
+        #homeProductsCategories .wrapper ul li img {
+          width: 71px !important;
+          height: 50px !important; }
+        #homeProductsCategories .wrapper ul li a {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          font: 500 1em tahoma;
+          color: #818181;
+          text-decoration: none;
+          font-weight: 900;
+          margin-left: 10px; }
+
+.contAnuncios {
+  margin: 50px 0;
+  opacity: 0; }
+  .contAnuncios h2 {
+    font: 700 1.6em "Raleway",sans-serif;
+    color: #78c4ed;
+    text-align: center;
+    margin: 10px 0 30px 0; }
+    .contAnuncios h2 span {
+      padding: 5px 20px;
+      position: relative; }
+      .contAnuncios h2 span span {
+        padding: 0;
+        border-bottom: 2px solid #7bc7f3;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: -1px; }
+  .contAnuncios .contTopAnuncios {
+    margin-top: 10px;
+    position: relative; }
+    .contAnuncios .contTopAnuncios .topAnunciosControls button {
+      position: absolute;
+      top: 42%;
+      color: white;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: #373366;
+      border: 2px solid white;
+      transition: .5s;
+      margin-bottom: 5px;
+      vertical-align: middle;
+      z-index: 400; }
+      .contAnuncios .contTopAnuncios .topAnunciosControls button.btnPrev {
+        left: -5px; }
+      .contAnuncios .contTopAnuncios .topAnunciosControls button.btnNext {
+        right: -5px; }
+      .contAnuncios .contTopAnuncios .topAnunciosControls button:hover {
+        border: 2px solid white;
+        background: white;
+        color: #373366;
+        transition: .8s; }
+    .contAnuncios .contTopAnuncios .topAnuncios {
+      width: 100%;
+      display: block;
+      position: relative;
+      height: auto;
+      padding: 0 !important; }
+      .contAnuncios .contTopAnuncios .topAnuncios ul {
+        list-style: none;
+        display: block;
+        width: 100%;
+        padding: 20px 0;
+        position: relative;
+        margin: 0; }
+        .contAnuncios .contTopAnuncios .topAnuncios ul li {
+          margin-top: 15px;
+          padding: 0 10px; }
+          .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper {
+            box-shadow: 0 0 2px 1px #ccc;
+            padding: 4px; }
+            .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper:hover {
+              box-shadow: 0 0 5px 3px rgba(204, 204, 204, 0.85); }
+            .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper a {
+              text-decoration: none;
+              font-family: "Raleway",sans-serif; }
+            .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper .imgAnuncio img {
+              width: 100%;
+              height: 270px; }
+            .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper .dataAnuncio {
+              font-family: "Raleway",sans-serif; }
+              .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper .dataAnuncio .title {
+                font-size: 1em;
+                padding: 2px 5px;
+                color: #555;
+                text-align: center; }
+              .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper .dataAnuncio .price {
+                color: #ff8e47;
+                padding: 2px 5px;
+                text-align: center;
+                font-size: 1.5em !important;
+                font: 400 .9em "Roboto",sans-serif; }
+              .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper .dataAnuncio .location {
+                color: #b36432;
+                padding: 2px 5px;
+                font: 400 .8em "Roboto",sans-serif;
+                text-align: center; }
+              .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper .dataAnuncio .state {
+                text-transform: uppercase; }
+              .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper .dataAnuncio .more-details {
+                display: table;
+                margin: 0 auto 20px auto;
+                cursor: default; }
+                .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper .dataAnuncio .more-details:before, .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper .dataAnuncio .more-details:after {
+                  content: ""; }
+                .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper .dataAnuncio .more-details button {
+                  background: #22b822;
+                  padding: 10px 25px;
+                  display: table;
+                  color: white; }
+                  .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper .dataAnuncio .more-details button:hover {
+                    box-shadow: 0 2px 3px lightgray; }
+            .contAnuncios .contTopAnuncios .topAnuncios ul li .wrapper:last-child {
+              margin-right: 0 !important; }
+  .contAnuncios a {
+    text-decoration: none !important; }
+  .contAnuncios .watchMore {
+    display: table;
+    padding: 12px 20px;
+    margin: 20px auto 0 auto;
+    border-radius: 50px;
+    background: #ff8940;
+    box-shadow: 0 1px 3px grey;
+    font: 600 14px "Tahoma";
+    color: white;
+    cursor: pointer; }
+    .contAnuncios .watchMore:hover {
+      box-shadow: 0 2px 5px grey; }
+
+@media (min-width: 0) and (max-width: 768px) {
+  #slideMain article {
+    height: 200px; }
+
+  .cont-services-details {
+    padding-bottom: 0; }
+    .cont-services-details .box .wrapper {
+      padding-bottom: 30px; }
+    .cont-services-details .box.first .wrapper {
+      border-bottom: 1px dotted #78c4ed;
+      border-right: none; } }
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,98 @@
+
+<section id="footer-cont-services-details" class="col2-to29-xs col2-to29-md col2-to29-lg">
+
+  <div class="box first col1-to30-xs col1-to10-lg">
+    <div class="wrapper">
+      <div class="col1-to15-xs">
+        <p>{{ whatDoing.slogan }}</p>
+      </div>
+
+      <div class="col16-to30-xs image">
+        <img src="{{ urls.appUrl }}_medias/_images/assets/o-que-fazemos.png"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="box second col1-to30-xs col11-to20-lg">
+    <div class="wrapper">
+      <p class="box-header">
+        <img src="{{ whatDoing.firstBlock.image }}"/><button>{{ whatDoing.firstBlock.title }}</button>
+      </p>
+      <p class="desc col1-to30-xs">{{ whatDoing.firstBlock.text }}</p>
+    </div>
+  </div>
+
+  <div class="box thirdy col1-to30-xs col21-to30-lg">
+    <div class="wrapper">
+      <p class="box-header">
+        <img src="{{ whatDoing.secondBlock.image }}"/><button>{{ whatDoing.secondBlock.title }}</button>
+      </p>
+      <p class="desc col1-to30-xs">{{ whatDoing.secondBlock.text }}</p>
+    </div>
+  </div>
+
+</section>
+
+
+<div id="footer-bottom-contacts-box" class="col2-to29-xs">
+
+  <div class="box first col1-to30-xs col1-to10-vl">
+    <div class="logo-container">
+      <a href="{{ urls.baseUrl }}"><img src="{{ logo }}"></a>
+    </div>
+  </div>
+
+  <div class="box second col1-to30-xs col11-to20-vl">
+    <ul class="contacts">
+      <li><a href="tel://{{ phone }}" ><i class="fas fa-phone"></i><span>{{ phone }}</span></a></li>
+      <li><a href="https://api.whatsapp.com/send?phone={{ whatsapp }}" target="_blank"><i class="fab fa-whatsapp"></i><span>{{ whatsapp }}</span></a></li>
+    </ul>
+  </div>
+
+  <div class="box thirdy col1-to30-xs col21-to30-vl">
+    <p><a href="mailto://{{ email }}"><i class="fas fa-envelope"></i><span>{{ email }}</span></a></p>
+  </div>
+  
+</div>
+
+
+<footer id="footer" class="col1-to30-xs">
+  <div class="wrapper clearfix">
+
+    <div class="col1-to30-xs col1-to10-lg box about">
+      <h4>A Empresa</h4>
+      <p>{{ shortDescription }}</p>
+    </div>
+
+    <div class="col1-to30-xs col11-to20-lg box medias-social">
+      <h4>Redes sociais</h4>
+      <ul>
+        <li><a href="{{ socialMedias.facebook }}" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="{{ socialMedias.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="{{ socialMedias.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+      </ul>
+    </div>
+
+    <div class="col1-to30-xs col21-to30-lg box newsletter">
+      <h4>Receba todas as novidades</h4>
+      <form>
+        <input type="email" placeholder="Email" name="email" required/>
+        <input type="submit" value="Enviar"/>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="bottom-menu col1-to30-xs">
+    <ul>
+      <li><a href="{{urls.baseUrl}}" data-translate="false">Home</a></li>
+      <li><a href="{{urls.baseUrl}}products/">Produtos</a></li>
+      <li><a href="{{urls.baseUrl}}contact/">Contato</a></li>
+      <li><a href="{{urls.baseUrl}}about/">Sobre</a></li>
+    </ul>
+  </div>
+
+  <div class="copyright col1-to30-xs">
+    <p>&copy;<script>document.write(new Date().getFullYear()+ "");</script> Todos os direitos reservados</p>
+  </div>
+</footer>

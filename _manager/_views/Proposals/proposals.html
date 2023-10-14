@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>{{ pageTitle }}</title>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+
+  <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
+
+  {%autoescape 'html'%}
+  {{ components.default_files_css | raw }}
+  {%endautoescape%}
+
+  <link rel="stylesheet" href="{{ urls.managerUrl }}_css/proposal.css"/>
+
+</head>
+<body>
+
+<div class="wrapper ">
+
+  {%autoescape 'html'%}
+  {{ components.menu | raw }}
+  {%endautoescape%}
+
+  <main class="main-panel">
+
+    {%autoescape 'html'%}
+    {{ components.header |raw }}
+    {%endautoescape%}
+
+    <div class="content" data-ng-app="appProposals">
+      <div class="container-fluid" data-ng-view></div>
+    </div>
+
+  </main>
+
+  {%autoescape 'html'%}
+  {{ components.overlay | raw }}
+  {%endautoescape%}
+
+</div>
+
+{%autoescape 'html'%}
+{{ components.default_files_js | raw }}
+{%endautoescape%}
+
+<script src="{{ urls.managerUrl }}_angularJS/scripts/Proposals/routeProposals.js"></script>
+<script src="{{ urls.managerUrl }}_angularJS/scripts/Proposals/appProposals.js"></script>
+
+</body>
+</html>

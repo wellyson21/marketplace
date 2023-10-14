@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>{{ pageTitle }}</title>
+
+    {%autoescape 'html'%}
+    {{ components.configs_head | raw }}
+    {%endautoescape%}
+
+    {%autoescape 'html'%}
+    {{ components.default_files_css | raw }}
+    {%endautoescape%}
+
+    <link rel="stylesheet" href="{{ urls.appUrl }}_css/authenticate.css"/>
+
+  </head>
+  <body>
+
+    <div class="main-wrapper" id="login">
+      <main class="main-panel">
+
+        {%autoescape 'html'%}
+          {{ components.header |raw }}
+        {%endautoescape%}
+
+        <section id="main-content">
+          <article class="col2-to29-xs col5-to25-lg col6-to24-vb boxes-container">
+
+            <div class="main-table">
+              <div class="main-cell">
+
+                <div class="col1-to30-xs col4-to27-lg box loginBox">
+                  <div class="table">
+                    <div class="cell">
+                      <h5>Iniciar sessão</h5>
+                      <form>
+                        <input type="email" required placeholder="Email" name="email"/>
+                        <input type="password" required placeholder="Senha" name="password"/>
+                        <div class="alert success">Login realizado com sucesso.</div>
+                        <div class="alert error">Falha ao realizar o login.</div>
+                        <input type="submit" value="Login"/>
+                        <a href="#" class="showForgotPassWord">Esqueceu a senha?</a>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="table bottom-box">
+                    <div class="cell">
+                      <h6>Novo no WebSite?</h6>
+                      <p>Então Crie uma conta e aproveite</p>
+                      <button class="showRegister">Realizar Registro</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col1-to30-xs col4-to27-lg box registerBox">
+                  <div class="table">
+                    <div class="cell">
+                      <h5><i class="fas fa-chevron-left showLogin"></i>Registrar</h5>
+                      <form>
+                        <input type="text" required placeholder="Nome" name="name"/>
+                        <input type="email" required placeholder="Email" name="email"/>
+                        <input type="password" required placeholder="Senha" name="password"/>
+                        <div class="alert success">Registro realizado com sucesso.</div>
+                        <div class="alert error">Falha ao realizar o registro.</div>
+                        <input type="submit" value="Registrar"/>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col1-to30-xs col4-to27-lg box forgotPasswordBox">
+                  <div class="table">
+                    <div class="cell">
+                      <h5><i class="fas fa-chevron-left showLogin"></i>Resetar Senha</h5>
+                      <form>
+                        <input type="email" required placeholder="Email registrado no sistema" name="email"/>
+                        <input type="submit" value="Resetar"/>
+                        <div class="alert"></div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </article>
+        </section>
+
+        {%autoescape 'html'%}
+        {{ components.footer |raw }}
+        {%endautoescape%}
+
+      </main>
+    </div>
+
+    {%autoescape 'html'%}
+      {{ components.default_files_javascript |raw }}
+    {%endautoescape%}
+
+    <script>
+      $$(function(){
+
+        (function boxesSate(){
+          $$(".showRegister").click(function(){
+            $$(".forgotPasswordBox").fadeOut();
+            $$(".loginBox").fadeOut(null,function(){
+              $$(".registerBox").fadeIn();
+            });
+          });
+
+          $$(".showLogin").click(function(){
+            $$(".forgotPasswordBox").fadeOut();
+            $$(".registerBox").fadeOut(null,function(){
+              $$(".loginBox").fadeIn();
+            });
+          });
+
+          $$(".showForgotPassWord").click(function(){
+            $$(".loginBox").fadeOut(null,function(){
+              $$(".forgotPasswordBox").fadeIn();
+            });
+          });
+
+        }());
+
+        (function formsSubmit(){
+
+		  let redirectUrl = sessionStorage.getItem("loginRedirectUrl");
+		  sessionStorage.removeItem("loginRedirectUrl");
+
+          $$(".loginBox form").submit(function(e){
+            e.preventDefault();
+
+            let data = $$(this).serialize();
+
+            $$.ajax({
+              url: urls.baseUrl + "authentication/",
+              type: "post",
+              data: {action: "login",email: data.email,password: data.password},
+              success: function(r){
+
+                console.log(r);
+
+                r = parseInt(r);
+
+                if(r === 0){
+
+                  $$(".loginBox .error").fadeIn().delay().fadeOut();
+                }else if(r === 1){
+
+                  $$(".loginBox .success").fadeIn().delay().fadeOut();
+
+                  setTimeout(function(){
+
+                    window.location.href = redirectUrl ? redirectUrl : urls.baseUrl + "account/";
+                  },1000);
+                }
+              }
+            });
+          });
+
+          $$(".registerBox form").submit(function(e){
+            e.preventDefault();
+            let data = $$(this).serialize();
+
+            $$.ajax({
+              url: urls.baseUrl + "authentication/",
+              data: {action: "register",name:data.name, email: data.email,password: data.password},
+              type: "post",
+              success: function(r){
+
+                r = parseInt(r);
+                if(r === 0){
+
+                  $$(".registerBox .error").html("Falha ao realizar o registro.").fadeIn().delay().fadeOut();
+                }else if(r === 1){
+
+                  $$(".registerBox .success").fadeIn().delay().fadeOut();
+                  setTimeout(function(){
+
+                    window.location.href = urls.baseUrl + "account/";
+                  },1000);
+                }else if(r === 2){
+
+                  $$(".registerBox .error").html("Este Usuário já esta registrado.").fadeIn().delay().fadeOut();
+                }
+              }
+            });
+          });
+
+          $$(".forgotPasswordBox form").submit(function(e){
+            e.preventDefault();
+            let data = $$(this).serialize();
+
+            $$.ajax({
+              url: urls.baseUrl + "requestResetPassword",
+              data: {action: "register",email: data.email},
+              type: "post",
+              success: function(r) {
+
+                if(parseInt(r) === 1){
+
+                  $$(".forgotPasswordBox form .alert").html("Vefirique seu email / caixa de span.").removeClass("error").addClass("success").fadeIn().delay(4000).fadeOut();
+                }else{
+
+                  $$(".forgotPasswordBox form .alert").html("Falha na operação. Por favor tente novamente.").removeClass("success").addClass("error").fadeIn().delay(4000).fadeOut();
+                }
+              }
+            });
+          });
+
+        }());
+
+      });
+    </script>
+  </body>
+</html>

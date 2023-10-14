@@ -1,0 +1,399 @@
+$primaryColor: white;
+$secondaryColor: rgb(120,196,237);
+$tertiaryColor: rgb(55,51,102);
+$quantenaryColor: rgb(123, 123, 128);
+
+#slideMain{
+  opacity: 0;
+  padding: 0 !important;
+  margin-top: 50px !important;
+  article{
+    height: 440px;
+    margin: 0 !important;
+    border: 2px solid rgb(180, 180, 180);
+
+    overflow: hidden;
+    .slideControllers{
+      width: 100%;
+      display: inline-block;
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      z-index: 2;
+      padding: 5px;
+      font-size: .8em;
+      color: #eee;
+      cursor: pointer;
+      .prev, .next{
+        border: none;
+        font-size: 2em;
+        color: #fff;
+        background: transparent;
+        display: none;
+      }
+      .prev{
+        float: left;
+      }
+      .next{
+        float: right;
+      }
+      .controllers{
+        text-align: center;
+        .play,.stop{
+          &:hover{
+            color: #c0c0c0;
+          }
+        }
+        .circles{
+          margin: 0 10px;
+          i{
+            margin: 0 2px;
+            &:hover{
+              color: #c0c0c0;
+            }
+          }
+        }
+      }
+    }
+    ul{
+      max-height: 430px !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      padding: 0!important;
+      li{
+        height: 100%;
+        padding: 0 !important;
+        margin: 0 !important;
+        li:first-child {
+          opacity: 0;
+        }
+        img{
+
+          width: 100%;
+          height: 100%;
+        }
+
+      }
+    }
+  }
+}
+
+#homeProductsCategories{
+  height: 440px !important;
+  margin-top: 40px !important;
+  padding: 1px 0;
+
+  .wrapper{
+    height: 100%;
+    width: 100%;
+    background: #e6e6e6f3;
+    box-shadow: 0 0 3px lightgray;
+    h6{
+      text-align: center;
+      text-transform: uppercase;
+      font: 500 1.2em "tahoma";
+      color: rgb(126, 124, 124);;
+      padding: 20px;
+    }
+
+    ul{
+      margin-top: -10px;
+      padding: 20px;
+      li{
+      list-style-type: none;
+      position: relative;
+
+        img{
+          width: 71px !important;
+          height: 50px !important;
+        }
+        a{
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          font: 500 1em tahoma;
+          color: rgb(129, 129, 129);
+          text-decoration: none;
+          font-weight: 900;
+          margin-left: 10px 
+        }
+      }
+    }
+  }
+}
+
+
+.contAnuncios{
+  margin: 50px 0;
+  opacity: 0;
+  h2{
+    font: 700 1.6em "Raleway",sans-serif;
+    color: $secondaryColor;
+    text-align: center;
+    margin: 10px 0 30px 0;
+    span{
+
+      padding: 5px 20px;
+      position: relative;
+      span{
+
+        padding: 0;
+        border-bottom: 2px solid #7bc7f3;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: -1px;
+      }
+    }
+  }
+
+  .contTopAnuncios{
+    margin-top: 10px;
+    position: relative;
+
+    .topAnunciosControls{
+      button{
+        position: absolute;
+        top: 42%;
+        color: $primaryColor;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: $tertiaryColor;
+        border: 2px solid $primaryColor;
+        transition: .5s;
+        margin-bottom: 5px;
+        vertical-align: middle;
+        z-index: 400;
+        &.btnPrev{
+          left: -5px;
+        }
+        &.btnNext{
+          right: -5px;
+        }
+        &:hover{
+          border: 2px solid $primaryColor;
+          background: $primaryColor;
+          color: $tertiaryColor;
+          transition: .8s;
+        }
+      }
+    }
+    .topAnuncios{
+      width: 100%;
+      display: block;
+      position: relative;
+      height: auto;
+      padding: 0 !important;
+      ul{
+        list-style: none;
+        display: block;
+        width: 100%;
+        padding: 20px 0;
+        position: relative;
+        margin: 0;
+
+        li{
+          margin-top: 15px;
+          padding: 0 10px;
+          .wrapper{
+            box-shadow: 0 0 2px 1px #ccc;
+            padding: 4px;
+  
+            &:hover{
+  
+              box-shadow: 0 0 5px 3px rgba(204, 204, 204, 0.85);
+            }
+            a{
+              text-decoration: none;
+              font-family: "Raleway",sans-serif;
+            }
+            .imgAnuncio{
+              img{
+                width: 100%;
+                height: 270px;
+              }
+            }
+            .dataAnuncio{
+              font-family: "Raleway",sans-serif;
+              .title{
+                font-size: 1em;
+                padding: 2px 5px;
+                color: #555;
+                text-align: center;
+              }
+              .price{
+                color: #ff8e47;
+                padding: 2px 5px;
+                text-align: center;
+                font-size: 1.5em !important;
+                font: 400 .9em "Roboto",sans-serif;
+              }
+  
+              .location{
+                color: #b36432;
+                padding: 2px 5px;
+                font: 400 .8em "Roboto",sans-serif;
+                text-align: center;
+              }
+  
+              .state{
+  
+                text-transform: uppercase;
+              }
+
+              .more-details{
+                display: table;
+                margin: 0 auto 20px auto;
+                cursor: default;
+                &:before,&:after{
+                  content: "";
+                }
+                button{
+                  background: rgb(34, 184, 34);
+                  padding: 10px 25px;
+                  display: table;
+                  color: white;
+
+                  &:hover{
+                    box-shadow: 0 2px 3px lightgray;
+                  }
+                }
+              }
+            }
+            &:last-child{
+              margin-right: 0 !important;
+            }
+          }
+         
+        }
+      }
+    }
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+  .watchMore{
+
+    display: table;
+    padding: 12px 20px;
+    margin: 20px auto 0 auto;
+    border-radius: 50px;
+    background: #ff8940;
+    box-shadow: 0 1px 3px grey;
+    font: 600 14px "Tahoma";
+    color: white;
+    cursor: pointer;
+
+    &:hover{
+
+      box-shadow: 0 2px 5px grey;
+    }
+
+    
+  }
+}
+
+
+@media (min-width: 0) and (max-width: 480px){
+  .contAnuncios{
+    .contTopAnuncios{
+      .topAnuncios{
+        ul{
+          li{
+
+            // width: 90% !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px){
+  .contAnuncios{
+    .contTopAnuncios{
+      .topAnuncios{
+        ul{
+          li{
+
+            // width: 45% !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 930px){
+  .contAnuncios{
+    .contTopAnuncios{
+      .topAnuncios{
+        ul{
+          li{
+
+            // width: 31% !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 930px) and (max-width: 1200px){
+  .contAnuncios{
+    .contTopAnuncios{
+      .topAnuncios{
+        ul{
+          li{
+
+            // width: 23% !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px){
+  .contAnuncios{
+    .contTopAnuncios{
+      .topAnuncios{
+        ul{
+          li{
+           
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 0) and (max-width: 768px){
+
+  #slideMain {
+    article {
+      height: 200px;
+    }
+  }
+
+  .cont-services-details {
+    padding-bottom: 0;
+    .box {
+      .wrapper{
+
+        padding-bottom: 30px;
+      }
+      &.first {
+        .wrapper {
+
+          border-bottom: 1px dotted $secondaryColor;
+          border-right: none;
+        }
+      }
+    }
+  }
+}
+

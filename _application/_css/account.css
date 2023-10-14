@@ -1,0 +1,709 @@
+#header .wrapper .top-header-box .info li.user a {
+  color: #78c4ed; }
+
+#main-content {
+  padding: 30px 0; }
+  #main-content a {
+    text-decoration: none; }
+  #main-content .pagination-box {
+    margin-top: 20pt;
+    display: table !important; }
+    #main-content .pagination-box .pagination-container {
+      display: table-cell;
+      margin: 0;
+      padding: 0 !important;
+      list-style: none; }
+      #main-content .pagination-box .pagination-container li {
+        float: left;
+        border-radius: 100%;
+        text-align: center;
+        margin: 0 1pt !important;
+        box-shadow: 0 0 3pt #a3a3a3;
+        width: auto !important; }
+        #main-content .pagination-box .pagination-container li a {
+          font: 600 7pt "Tahoma";
+          display: table-cell;
+          text-align: center;
+          width: 18px;
+          height: 18px;
+          vertical-align: middle; }
+      #main-content .pagination-box .pagination-container .activePage {
+        background-color: #9c9c9c !important; }
+        #main-content .pagination-box .pagination-container .activePage a {
+          color: whitesmoke !important; }
+      #main-content .pagination-box .pagination-container .disabledPage a {
+        color: #83828b !important; }
+      #main-content .pagination-box .pagination-container .next, #main-content .pagination-box .pagination-container .prev {
+        border: none;
+        box-shadow: none; }
+        #main-content .pagination-box .pagination-container .next a, #main-content .pagination-box .pagination-container .prev a {
+          color: #9c9c9c !important;
+          font-size: 12pt; }
+  #main-content .card {
+    z-index: 0 !important; }
+    #main-content .card .card-header h4 {
+      position: relative;
+      margin-bottom: 15px !important; }
+      #main-content .card .card-header h4 button.btnCreate {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: -8px; }
+    #main-content .card .card-body {
+      position: relative; }
+      #main-content .card .card-body .btnEdit {
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        border-radius: 100%;
+        position: absolute;
+        right: 10px;
+        top: 5px; }
+        #main-content .card .card-body .btnEdit i {
+          font-size: 13px; }
+  #main-content .contCustomCard {
+    margin-bottom: 30px; }
+    #main-content .contCustomCard .customCard {
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 3px 3px 3px #ddd; }
+      #main-content .contCustomCard .customCard .customCard-header {
+        position: relative;
+        cursor: pointer;
+        margin-bottom: 10px; }
+        #main-content .contCustomCard .customCard .customCard-header .thumbnail {
+          width: 90px;
+          height: 90px;
+          border-radius: 5px;
+          margin-right: 10px;
+          float: left; }
+        #main-content .contCustomCard .customCard .customCard-header .btnEdit {
+          width: 30px;
+          height: 30px;
+          padding: 0;
+          border-radius: 100%;
+          position: absolute;
+          right: -3px;
+          top: -7px; }
+          #main-content .contCustomCard .customCard .customCard-header .btnEdit i {
+            font-size: 13px; }
+        #main-content .contCustomCard .customCard .customCard-header .customCard-data {
+          min-height: 90px;
+          border: 1px solid transparent; }
+          #main-content .contCustomCard .customCard .customCard-header .customCard-data .title {
+            font-weight: bolder;
+            font-size: 17px;
+            color: #444;
+            margin-top: 0 !important; }
+          #main-content .contCustomCard .customCard .customCard-header .customCard-data .subtitle {
+            margin-top: -8px;
+            font-size: 12px;
+            color: #555; }
+          #main-content .contCustomCard .customCard .customCard-header .customCard-data .category {
+            color: coral;
+            float: left; }
+          #main-content .contCustomCard .customCard .customCard-header .customCard-data .date {
+            color: #999;
+            float: right; }
+          #main-content .contCustomCard .customCard .customCard-header .customCard-data .category,
+          #main-content .contCustomCard .customCard .customCard-header .customCard-data .date {
+            margin-top: 10px;
+            font-size: 11px; }
+          #main-content .contCustomCard .customCard .customCard-header .customCard-data .country {
+            display: block;
+            margin-top: 0; }
+      #main-content .contCustomCard .customCard .customCard-body {
+        border-top: 1px solid #ddd;
+        padding-top: 10px; }
+        #main-content .contCustomCard .customCard .customCard-body p {
+          font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+          font-size: 13px;
+          margin-bottom: 0; }
+        #main-content .contCustomCard .customCard .customCard-body .title {
+          font: 400 0.95em "Tahoma";
+          margin-bottom: 10px;
+          color: #4c4c4c; }
+        #main-content .contCustomCard .customCard .customCard-body .content {
+          font: 400 0.9em "Tahoma";
+          color: grey;
+          padding: 0 10px 10px 10px; }
+  #main-content .loader {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent;
+    display: block; }
+    #main-content .loader .table {
+      display: table;
+      margin: auto;
+      height: 100%;
+      border: none; }
+      #main-content .loader .table .cell {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle; }
+        #main-content .loader .table .cell i {
+          color: #373366;
+          font-size: 2.5em; }
+  #main-content .side-menu {
+    box-shadow: 2px 0 2px rgba(208, 208, 208, 0.91); }
+    #main-content .side-menu .activeSideMenuPage {
+      background: #74bae1 !important; }
+      #main-content .side-menu .activeSideMenuPage a {
+        color: white; }
+    #main-content .side-menu ul {
+      list-style: none; }
+      #main-content .side-menu ul li {
+        padding: 0 10px;
+        transition: 0.4s;
+        border-bottom: 1px solid rgba(66, 61, 123, 0.17); }
+        #main-content .side-menu ul li:hover {
+          transition: 0.4s;
+          background: #74bae1 !important; }
+          #main-content .side-menu ul li:hover a {
+            color: white; }
+        #main-content .side-menu ul li a {
+          padding: 15px 0;
+          display: block;
+          width: 100%;
+          height: 100%;
+          color: gray;
+          font: 400 0.8em "Tahoma";
+          text-transform: uppercase; }
+          #main-content .side-menu ul li a i {
+            margin-right: 5px; }
+  #main-content .content {
+    position: relative; }
+    #main-content .content .wrapper {
+      padding-bottom: 30px; }
+    #main-content .content #btnBackPage {
+      padding-left: 10px;
+      padding-right: 10px;
+      background: transparent;
+      vertical-align: middle;
+      color: grey; }
+      #main-content .content #btnBackPage:active {
+        border: 2px solid transparent !important; }
+      #main-content .content #btnBackPage:hover {
+        color: #5c5c5c !important; }
+      #main-content .content #btnBackPage span {
+        position: relative;
+        top: -5px; }
+    #main-content .content #dashboardPage .status {
+      margin-top: 30px; }
+      #main-content .content #dashboardPage .status .box div {
+        display: table;
+        margin: auto;
+        box-shadow: 0 0 3px lightgrey;
+        padding: 15px; }
+        #main-content .content #dashboardPage .status .box div .label {
+          font: 400 0.9em "Tahoma";
+          color: #7a7f7e;
+          display: block;
+          width: 100%;
+          text-align: center; }
+        #main-content .content #dashboardPage .status .box div .value {
+          font: 600 2.5em "Tahoma";
+          color: lightblue;
+          display: block;
+          width: 100%;
+          text-align: center; }
+    #main-content .content #dashboardPage .payTax {
+      margin-top: 30px; }
+      #main-content .content #dashboardPage .payTax img {
+        width: 150px;
+        display: table;
+        margin: 0 auto 10px auto; }
+      #main-content .content #dashboardPage .payTax p {
+        font: 500 1.5em "Tahoma";
+        text-align: center;
+        margin-bottom: 40px;
+        color: gray; }
+      #main-content .content #dashboardPage .payTax .notification {
+        display: none; }
+      #main-content .content #dashboardPage .payTax form {
+        display: table;
+        width: 245px;
+        margin: auto;
+        box-shadow: 0 0 30px #cfcfcf;
+        padding: 15px; }
+        #main-content .content #dashboardPage .payTax form input {
+          width: 100%;
+          height: 37px; }
+          #main-content .content #dashboardPage .payTax form input[type=text] {
+            border: 1px solid #78c4ed;
+            color: #9a9a9a; }
+          #main-content .content #dashboardPage .payTax form input[type=submit] {
+            margin-top: 5px;
+            border: 1px solid transparent;
+            background: #78c4ed;
+            color: white;
+            cursor: pointer; }
+            #main-content .content #dashboardPage .payTax form input[type=submit]:hover {
+              background: #5991af; }
+    #main-content .content #profilePage .header {
+      height: 90px;
+      background: rgba(105, 172, 208, 0.47);
+      position: relative; }
+      #main-content .content #profilePage .header .edit-button {
+        float: right;
+        margin: 15px 10px 0 0;
+        background: transparent;
+        color: white;
+        cursor: pointer; }
+      #main-content .content #profilePage .header .photo-container {
+        margin: auto;
+        height: 90px;
+        width: 90px;
+        border-radius: 100%;
+        display: table;
+        clear: both;
+        position: relative;
+        border: 2px solid white; }
+        #main-content .content #profilePage .header .photo-container img {
+          opacity: 0;
+          background: white;
+          height: 90px !important;
+          width: 90px !important;
+          border-radius: 100% !important; }
+        #main-content .content #profilePage .header .photo-container i {
+          background: #78c4ed;
+          padding: 5px;
+          color: white;
+          cursor: pointer;
+          position: absolute;
+          right: 10px;
+          bottom: 25px;
+          border-radius: 100%;
+          z-index: 10; }
+    #main-content .content #profilePage .contacts, #main-content .content #profilePage .address {
+      padding: 35px 10px 10px 10px; }
+      #main-content .content #profilePage .contacts h6, #main-content .content #profilePage .address h6 {
+        font: 500 1.3em "Tahoma";
+        color: gray;
+        margin-bottom: 15px; }
+      #main-content .content #profilePage .contacts i, #main-content .content #profilePage .address i {
+        font-size: 0.9em; }
+      #main-content .content #profilePage .contacts .fa-envelope, #main-content .content #profilePage .address .fa-envelope {
+        color: orange; }
+      #main-content .content #profilePage .contacts .fa-phone, #main-content .content #profilePage .address .fa-phone {
+        color: cornflowerblue; }
+      #main-content .content #profilePage .contacts p span, #main-content .content #profilePage .address p span {
+        font: 500 0.8em "Tahoma";
+        color: gray; }
+    #main-content .content #profilePage .address span {
+      display: block; }
+    #main-content .content #profilePage .address .no-data {
+      color: grey;
+      text-align: center; }
+    #main-content .content #profilePage.edit {
+      padding-top: 15px; }
+      #main-content .content #profilePage.edit .profileForm .form-group {
+        padding: 5px 5px; }
+      #main-content .content #profilePage.edit .profileForm input {
+        height: 35px;
+        padding: 10px;
+        border: 1px solid grey;
+        width: 100%; }
+        #main-content .content #profilePage.edit .profileForm input[type=submit] {
+          margin: 0 5px;
+          width: auto;
+          padding: 5px 20px;
+          border: 1px solid transparent;
+          background: #78c4ed;
+          color: white;
+          cursor: pointer; }
+          #main-content .content #profilePage.edit .profileForm input[type=submit]:hover {
+            background: #67a8cb; }
+      #main-content .content #profilePage.edit .profileForm .alert {
+        margin: 5px;
+        color: white;
+        display: none; }
+    #main-content .content #advertsPage .header {
+      border-bottom: 1px solid #6bafd4; }
+      #main-content .content #advertsPage .header p {
+        float: left;
+        width: 50px;
+        height: 50px;
+        background: #6bafd4;
+        display: table; }
+        #main-content .content #advertsPage .header p i {
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+          font-size: 1.5em;
+          color: white; }
+      #main-content .content #advertsPage .header .addAdvert {
+        float: right;
+        margin-top: 15px;
+        background: transparent; }
+        #main-content .content #advertsPage .header .addAdvert i {
+          color: green;
+          font-size: 1.5em;
+          cursor: pointer; }
+    #main-content .content #advertsPage .payTax {
+      margin: 30px 0; }
+      #main-content .content #advertsPage .payTax img {
+        width: 150px;
+        display: table;
+        margin: 0 auto 10px auto; }
+      #main-content .content #advertsPage .payTax .title {
+        margin-bottom: 0;
+        font-style: italic; }
+      #main-content .content #advertsPage .payTax .subtitle {
+        font-style: italic; }
+      #main-content .content #advertsPage .payTax p {
+        font: 500 1.5em "Tahoma";
+        text-align: center;
+        margin-bottom: 40px;
+        color: gray; }
+      #main-content .content #advertsPage .payTax .notification {
+        display: none; }
+      #main-content .content #advertsPage .payTax form {
+        display: table;
+        margin: auto;
+        box-shadow: 0 0 30px #cfcfcf;
+        padding: 15px; }
+        #main-content .content #advertsPage .payTax form input {
+          width: 100%;
+          height: 37px; }
+          #main-content .content #advertsPage .payTax form input[type=text] {
+            border: 1px solid #78c4ed;
+            color: #9a9a9a; }
+          #main-content .content #advertsPage .payTax form input[type=submit] {
+            margin-top: 5px;
+            border: 1px solid transparent;
+            background: #78c4ed;
+            color: white;
+            cursor: pointer; }
+            #main-content .content #advertsPage .payTax form input[type=submit]:hover {
+              background: #5991af; }
+    #main-content .content #advertsPage .content .no-proposal {
+      margin-top: 30px; }
+      #main-content .content #advertsPage .content .no-proposal p {
+        text-align: center; }
+        #main-content .content #advertsPage .content .no-proposal p i {
+          display: block;
+          font-size: 2.5em;
+          color: #747474; }
+        #main-content .content #advertsPage .content .no-proposal p span {
+          margin-top: 5px;
+          display: block;
+          font: 400 0.95em "Tahoma";
+          color: gray; }
+    #main-content .content #advertsPage .content ul {
+      list-style: none;
+      display: block;
+      width: 100%; }
+      #main-content .content #advertsPage .content ul li {
+        width: 100%;
+        padding: 10px;
+        display: block;
+        box-shadow: 0 0 5px lightgrey;
+        cursor: pointer;
+        margin-top: 15px; }
+        #main-content .content #advertsPage .content ul li img {
+          width: 80px;
+          height: 80px;
+          border-radius: 100%;
+          float: left; }
+        #main-content .content #advertsPage .content ul li .right-info {
+          float: left;
+          margin-left: 10px; }
+        #main-content .content #advertsPage .content ul li .top-info {
+          position: relative; }
+          #main-content .content #advertsPage .content ul li .top-info .name {
+            margin-top: 10px;
+            font: 400 1.2em "Tahoma";
+            color: gray; }
+          #main-content .content #advertsPage .content ul li .top-info .price {
+            font: 400 0.9em "Tahoma";
+            color: #c69e2f; }
+          #main-content .content #advertsPage .content ul li .top-info .date {
+            font: 400 0.8em "Tahoma";
+            color: #a3605a; }
+          #main-content .content #advertsPage .content ul li .top-info i {
+            position: absolute;
+            top: 35px;
+            right: 10px;
+            color: #78c4ed;
+            font-size: 1.3em;
+            cursor: default;
+            transition: 0.3s; }
+            #main-content .content #advertsPage .content ul li .top-info i:hover {
+              transition: 0.3s;
+              color: #62a2c3; }
+            #main-content .content #advertsPage .content ul li .top-info i.fa-times-circle {
+              color: #ff6466;
+              right: 40px; }
+        #main-content .content #advertsPage .content ul li .bottom-info {
+          border-top: 1px solid rgba(218, 218, 218, 0.86);
+          margin-top: 10px;
+          margin-bottom: 0;
+          padding: 0;
+          display: none;
+          clear: both; }
+          #main-content .content #advertsPage .content ul li .bottom-info p {
+            text-align: center;
+            font: 400 1.2em "Tahoma";
+            color: gray;
+            margin: 10px 0; }
+          #main-content .content #advertsPage .content ul li .bottom-info .wrapper {
+            display: table;
+            margin: auto; }
+            #main-content .content #advertsPage .content ul li .bottom-info .wrapper img {
+              float: none;
+              display: table;
+              margin: auto; }
+            #main-content .content #advertsPage .content ul li .bottom-info .wrapper .right-info {
+              margin-top: 10px;
+              float: none; }
+            #main-content .content #advertsPage .content ul li .bottom-info .wrapper p {
+              margin: 0;
+              font: 300 0.85em "Tahoma"; }
+    #main-content .content #viewAdvert .contCustomCard .customCard .customCard-header {
+      position: relative; }
+      #main-content .content #viewAdvert .contCustomCard .customCard .customCard-header .create {
+        float: none;
+        position: absolute;
+        bottom: 0;
+        right: 5pt; }
+      #main-content .content #viewAdvert .contCustomCard .customCard .customCard-header .country {
+        text-transform: capitalize; }
+      #main-content .content #viewAdvert .contCustomCard .customCard .customCard-header .date, #main-content .content #viewAdvert .contCustomCard .customCard .customCard-header .category {
+        display: block;
+        margin-top: 0 !important;
+        margin-bottom: 3px; }
+      #main-content .content #viewAdvert .contCustomCard .customCard .customCard-header .category {
+        margin-bottom: 10px;
+        float: none; }
+      #main-content .content #viewAdvert .contCustomCard .customCard .customCard-header .subtitle {
+        display: block; }
+      #main-content .content #viewAdvert .contCustomCard .customCard .customCard-header .state {
+        text-transform: uppercase; }
+      #main-content .content #viewAdvert .contCustomCard .customCard .customCard-header .customCard-data .expire {
+        display: block;
+        margin-top: -10pt; }
+    #main-content .content #createUpdateAdvertPage .pricefield {
+      height: 40px !important; }
+    #main-content .content #createUpdateAdvertPage .customCard-body {
+      margin-top: 10px !important; }
+      #main-content .content #createUpdateAdvertPage .customCard-body section .title {
+        font-size: 0.75em;
+        font-style: italic;
+        color: indianred; }
+      #main-content .content #createUpdateAdvertPage .customCard-body section .content {
+        margin-left: 15px;
+        margin-bottom: 10px; }
+    #main-content .content #createUpdateAdvertPage .alert {
+      margin: 10px;
+      color: white; }
+    #main-content .content #createUpdateAdvertPage #formPromotion .contImages {
+      position: relative; }
+    #main-content .content #createUpdateAdvertPage #formPromotion .removeImage {
+      position: absolute;
+      right: 3px;
+      top: 3px;
+      border-radius: 100%;
+      width: 20px;
+      height: 20px;
+      border: none;
+      background: red;
+      padding: 0;
+      color: white;
+      font: 600 10pt "Tahoma";
+      z-index: 100; }
+    #main-content .content #createUpdateAdvertPage form .form-group {
+      padding: 0 10px;
+      margin-top: 10px; }
+    #main-content .content #createUpdateAdvertPage form input[type=text], #main-content .content #createUpdateAdvertPage form input[type=number], #main-content .content #createUpdateAdvertPage form textarea, #main-content .content #createUpdateAdvertPage form select {
+      width: 100%;
+      resize: none;
+      border: 1px solid lightgrey;
+      padding: 10px; }
+    #main-content .content #createUpdateAdvertPage form input[type=text], #main-content .content #createUpdateAdvertPage form input[type=number] {
+      height: 35px; }
+    #main-content .content #createUpdateAdvertPage form label {
+      color: #757575; }
+    #main-content .content #createUpdateAdvertPage form .contBlockImages {
+      padding: 0 15px;
+      margin-bottom: 15px; }
+      #main-content .content #createUpdateAdvertPage form .contBlockImages input {
+        display: none; }
+      #main-content .content #createUpdateAdvertPage form .contBlockImages small {
+        color: #aaa; }
+      #main-content .content #createUpdateAdvertPage form .contBlockImages .contImages {
+        border-radius: 4px;
+        border: 2px solid #fff;
+        box-shadow: 2px 2px 5px #ccc;
+        transition: .5s;
+        position: relative;
+        cursor: pointer; }
+        #main-content .content #createUpdateAdvertPage form .contBlockImages .contImages img {
+          width: 100%;
+          height: 100%;
+          border-radius: inherit; }
+        #main-content .content #createUpdateAdvertPage form .contBlockImages .contImages .contSkin {
+          border-radius: inherit;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%; }
+          #main-content .content #createUpdateAdvertPage form .contBlockImages .contImages .contSkin .overlay {
+            border-radius: inherit;
+            width: 100%;
+            height: 100%;
+            display: table;
+            background: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            text-align: center;
+            transition: .5s; }
+            #main-content .content #createUpdateAdvertPage form .contBlockImages .contImages .contSkin .overlay small {
+              font-size: 1em;
+              color: #fff;
+              display: table-cell;
+              vertical-align: middle; }
+            #main-content .content #createUpdateAdvertPage form .contBlockImages .contImages .contSkin .overlay:hover {
+              opacity: 1;
+              transition: .5s; }
+      #main-content .content #createUpdateAdvertPage form .contBlockImages .contOthersImages ul {
+        list-style: none;
+        padding: 0;
+        text-align: center; }
+        #main-content .content #createUpdateAdvertPage form .contBlockImages .contOthersImages ul li {
+          display: inline-table;
+          width: 25%; }
+          #main-content .content #createUpdateAdvertPage form .contBlockImages .contOthersImages ul li .contImages small {
+            font-size: .75em !important; }
+          #main-content .content #createUpdateAdvertPage form .contBlockImages .contOthersImages ul li .contImages img {
+            height: 100%; }
+      #main-content .content #createUpdateAdvertPage form .contBlockImages .contOthersImages input {
+        display: none; }
+    #main-content .content #proposalPage .header {
+      background: rgba(105, 172, 208, 0.47);
+      margin-bottom: 20px; }
+      #main-content .content #proposalPage .header ul {
+        list-style: none;
+        display: table;
+        margin: auto;
+        padding: 10px; }
+        #main-content .content #proposalPage .header ul li {
+          float: left;
+          padding: 10px 20px;
+          border: 1px solid #74bae1 !important;
+          color: white;
+          cursor: pointer;
+          transition: 0.3s; }
+          #main-content .content #proposalPage .header ul li:hover {
+            transition: 0.3s;
+            background: #373366; }
+          #main-content .content #proposalPage .header ul li:first-child {
+            margin-right: 1px; }
+    #main-content .content #proposalPage .content .no-proposal {
+      margin-top: 30px; }
+      #main-content .content #proposalPage .content .no-proposal p {
+        text-align: center; }
+        #main-content .content #proposalPage .content .no-proposal p i {
+          display: block;
+          font-size: 2.5em;
+          color: #747474; }
+        #main-content .content #proposalPage .content .no-proposal p span {
+          margin-top: 5px;
+          display: block;
+          font: 400 0.95em "Tahoma";
+          color: gray; }
+    #main-content .content #proposalPage .content ul {
+      list-style: none;
+      display: block;
+      width: 100%; }
+      #main-content .content #proposalPage .content ul li {
+        width: 100%;
+        padding: 10px;
+        display: block;
+        box-shadow: 0 0 5px lightgrey;
+        margin-top: 10px; }
+        #main-content .content #proposalPage .content ul li:first-child {
+          margin-top: 0; }
+        #main-content .content #proposalPage .content ul li img {
+          width: 100px;
+          height: 100px;
+          border-radius: 100%;
+          float: left; }
+        #main-content .content #proposalPage .content ul li .right-info {
+          float: left;
+          margin-left: 10px; }
+        #main-content .content #proposalPage .content ul li .top-info {
+          position: relative; }
+          #main-content .content #proposalPage .content ul li .top-info .name {
+            margin-top: 10px;
+            font: 400 1.2em "Tahoma";
+            color: gray; }
+          #main-content .content #proposalPage .content ul li .top-info .price {
+            font: 400 0.9em "Tahoma";
+            color: #c69e2f; }
+          #main-content .content #proposalPage .content ul li .top-info .priceLabel {
+            font: 400 0.8em "Tahoma";
+            color: #a3605a; }
+          #main-content .content #proposalPage .content ul li .top-info .date {
+            font: 400 0.7em "Tahoma";
+            color: #a3605a;
+            display: block; }
+          #main-content .content #proposalPage .content ul li .top-info i {
+            position: absolute;
+            top: 40px;
+            right: 10px;
+            color: #78c4ed;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: 0.3s; }
+            #main-content .content #proposalPage .content ul li .top-info i:hover {
+              transition: 0.3s;
+              color: #62a2c3; }
+            #main-content .content #proposalPage .content ul li .top-info i.fa-times-circle {
+              color: #ff6466;
+              right: 38px; }
+        #main-content .content #proposalPage .content ul li .bottom-info {
+          border-top: 1px solid rgba(218, 218, 218, 0.86);
+          margin-top: 10px;
+          margin-bottom: 0;
+          padding: 0;
+          display: none;
+          clear: both; }
+          #main-content .content #proposalPage .content ul li .bottom-info p {
+            text-align: center;
+            font: 400 1.2em "Tahoma";
+            color: gray;
+            margin: 10px 0; }
+          #main-content .content #proposalPage .content ul li .bottom-info .wrapper {
+            display: table;
+            margin: auto; }
+            #main-content .content #proposalPage .content ul li .bottom-info .wrapper img {
+              float: none;
+              display: table;
+              margin: auto; }
+            #main-content .content #proposalPage .content ul li .bottom-info .wrapper .right-info {
+              margin-top: 10px;
+              float: none; }
+            #main-content .content #proposalPage .content ul li .bottom-info .wrapper p {
+              margin: 0;
+              font: 300 0.85em "Tahoma"; }
+
+@media (min-width: 0) and (max-width: 768px) {
+  #main-content {
+    padding-bottom: 30px; }
+    #main-content a {
+      text-decoration: none; }
+    #main-content .side-menu {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 5px #7a7a7a;
+      min-height: auto !important;
+      height: auto !important; }
+      #main-content .side-menu ul {
+        margin-top: 0; } }
+
+/*# sourceMappingURL=account.css.map */

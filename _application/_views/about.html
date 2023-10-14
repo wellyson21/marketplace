@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>{{ pageTitle }}</title>
+
+    {%autoescape 'html'%}
+    {{ components.configs_head | raw }}
+    {%endautoescape%}
+
+    {%autoescape 'html'%}
+    {{ components.default_files_css | raw }}
+    {%endautoescape%}
+
+    <link rel="stylesheet" href="{{ urls.appUrl }}_css/about.css"/>
+
+  </head>
+  <body>
+
+    <div class="main-wrapper">
+
+      <main class="main-panel">
+
+        {%autoescape 'html'%}
+          {{ components.header |raw }}
+        {%endautoescape%}
+
+        <section id="main-content">
+
+          <h2>- Empresa -</h2>
+          <p class="col5-to25-xs">
+            {%autoescape 'html'%}
+            {{ data.longDescription |raw }}
+            {%endautoescape%}
+          </p>
+
+        </section>
+
+        {%autoescape 'html'%}
+        {{ components.footer |raw }}
+        {%endautoescape%}
+
+      </main>
+
+    </div>
+
+    {%autoescape 'html'%}
+      {{ components.default_files_javascript |raw }}
+    {%endautoescape%}
+
+    <script>
+
+      $$(function(){
+
+        $$("#main-content").animate({opacity: 1},{duration: 4000})
+
+      });
+
+    </script>
+
+  </body>
+</html>

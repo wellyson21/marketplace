@@ -1,0 +1,96 @@
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <!--<div class="col-sm-6 col-md-6 col-lg-3">-->
+      <!--<div class="card card-stats">-->
+        <!--<div class="card-header card-header-warning card-header-icon">-->
+          <!--<div class="card-icon">-->
+            <!--<i class="material-icons">how_to_reg</i>-->
+          <!--</div>-->
+          <!--<p class="card-category">Users</p>-->
+          <!--<h3 class="card-title">{{ totalUsers || 0 }}</h3>-->
+        <!--</div>-->
+        <!--<div class="card-footer">-->
+          <!--<div class="stats">-->
+            <!--<i class="material-icons">info</i> Total estimate-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <div class="col-sm-6 col-md-6 col-lg-4">
+      <div class="card card-stats">
+        <div class="card-header card-header-success card-header-icon">
+          <div class="card-icon">
+            <i class="material-icons">assignment_turned_in</i>
+          </div>
+          <p class="card-category">Propostas</p>
+          <h3 class="card-title">{{ proposalsCount || 0 }}</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">info</i> Current month
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6 col-lg-4">
+      <div class="card card-stats">
+        <div class="card-header card-header-success card-header-icon">
+          <div class="card-icon">
+            <i class="material-icons">view_quilt</i>
+          </div>
+          <p class="card-category">Produtos</p>
+          <h3 class="card-title">{{ productsCount || 0 }}</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">info</i> Current month
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6 col-lg-4">
+      <div class="card card-stats">
+        <div class="card-header card-header-danger card-header-icon">
+          <div class="card-icon">
+            <i class="material-icons">library_books</i>
+          </div>
+          <p class="card-category">Anunciantes</p>
+          <h3 class="card-title">{{ advertisersCount || 0 }}</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">info</i> Total active cards
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div class="card card-chart">
+        <div class="card-header card-header-warning">
+          <i class="material-icons">how_to_reg</i>
+          <!--<div class="ct-chart" id="salesChart"></div>-->
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">Usuários</h4>
+          <p class="card-category">{{ usersCount || 0 }}</p>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">access_time</i> Updated now
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,43 @@
+<div id="viewAdvert" class="col2-to29-md">
+  <!--<button class="btn btn-link" id="btnBackPage" data-ng-click="backPage()"><i class="material-icons">arrow_back_ios</i>Back</button>-->
+  <button class="btn btn-link" id="btnBackPage" data-ng-click="backPage()"><i class="material-icons">arrow_back_ios</i><span>Back</span></button>
+
+  <div class="contCustomCard">
+    <div class="customCard" data-count="6">
+      <div class="customCard-header">
+        <img class="thumbnail" src="{{ advert.thumbnail }}">
+        <div class="customCard-data">
+          <h4 class="title">{{ advert.name }}</h4>
+          <small class="subtitle category">{{ advert.category }}</small>
+          <small class="subtitle"><span class="state">{{ advert.state }}</span> - {{ advert.city }}</small>
+          <small class="subtitle country">{{ advert.country }}</small>
+          <small class="subtitle date">{{ advert.date }}</small>
+        </div>
+        <button class="btn btn-success btnEdit" data-ng-click="editAdvert($event)"><i class="material-icons">create</i></button>
+      </div>
+      <div class="customCard-body">
+        <!--<section>-->
+          <!--<h5 class="title">Descrição Curta</h5>-->
+          <!--<div class="content">-->
+            <!--{{ advert.productDescription.short }}-->
+          <!--</div>-->
+        <!--</section>-->
+        <section>
+          <h5 class="title">Descrição</h5>
+          <!--<h5 class="title">Descrição Longa</h5>-->
+          <div class="content" ng-bind-html="advert.productDescription.long"></div>
+        </section>
+        <section ng-if="advert.secondariesImages.length > 0">
+          <h5 class="title">Imagens</h5>
+          <div class="container-images" style="width: 100%; overflow-x: auto; background-color: rgba(240,240,240,0.45); border-radius: 5px; padding: 10px;">
+            <div style="width: {{ advert.secondariesImages.length * 210 + 'px' }};">
+              <div data-ng-repeat="imgSrc in advert.secondariesImages track by $index" style="display: inline-table; width: 200px; height: 200px; margin-right: {{ $index === (promotion.slideImages.length-1) ? 0 : '8px' }};">
+                <img src="{{ imgSrc }}" style="width: 100%; height: 100%;"/>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

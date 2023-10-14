@@ -1,0 +1,194 @@
+#homePage * {
+  outline: none !important; }
+#homePage #slideMain {
+  opacity: 0;
+  margin: 40px 0 !important; }
+  #homePage #slideMain article {
+    height: 450px;
+    position: relative;
+    overflow: hidden; }
+    #homePage #slideMain article .slideControllers {
+      width: 100%;
+      display: inline-block;
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      z-index: 2;
+      padding: 5px;
+      font-size: .8em;
+      color: #eee;
+      cursor: pointer; }
+      #homePage #slideMain article .slideControllers .prev, #homePage #slideMain article .slideControllers .next {
+        border: none;
+        font-size: 2em;
+        background: transparent;
+        display: block;
+        position: absolute;
+        bottom: 600%;
+        cursor: pointer;
+        color: #373366; }
+      #homePage #slideMain article .slideControllers .prev {
+        float: left;
+        left: 10px; }
+      #homePage #slideMain article .slideControllers .next {
+        float: right;
+        right: 10px; }
+      #homePage #slideMain article .slideControllers .controllers {
+        text-align: center; }
+        #homePage #slideMain article .slideControllers .controllers .play:hover, #homePage #slideMain article .slideControllers .controllers .stop:hover {
+          color: #c0c0c0; }
+        #homePage #slideMain article .slideControllers .controllers .circles {
+          margin: 0 10px; }
+          #homePage #slideMain article .slideControllers .controllers .circles i {
+            margin: 0 2px; }
+            #homePage #slideMain article .slideControllers .controllers .circles i:hover {
+              color: #c0c0c0; }
+    #homePage #slideMain article ul {
+      max-height: 480px;
+      list-style: none;
+      padding: 0 !important; }
+      #homePage #slideMain article ul li {
+        height: 100%;
+        position: relative !important;
+        margin: 0 !important; }
+        #homePage #slideMain article ul li li:first-child {
+          opacity: 0; }
+        #homePage #slideMain article ul li img {
+          width: 100%;
+          height: 100%; }
+        #homePage #slideMain article ul li button {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          width: 30px;
+          height: 30px;
+          border: 1px solid transparent;
+          background: #78c4ed;
+          cursor: pointer;
+          border-radius: 100%;
+          padding: 4px;
+          color: white; }
+          #homePage #slideMain article ul li button:hover {
+            background: #69abce; }
+          #homePage #slideMain article ul li button img {
+            width: 100%;
+            height: 100%;
+            margin-top: -5px; }
+          #homePage #slideMain article ul li button i {
+            margin: -1px 0 0 -1px;
+            font-size: 0.99em; }
+          #homePage #slideMain article ul li button.remove {
+            right: 50px; }
+#homePage .header {
+  border-bottom: 1px solid #6bafd4;
+  margin: 20px 0; }
+  #homePage .header p {
+    margin: 0;
+    float: left;
+    width: 50px;
+    height: 50px;
+    background: #6bafd4;
+    display: table; }
+    #homePage .header p i {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      font-size: 1.5em;
+      color: white; }
+  #homePage .header .add {
+    float: right;
+    margin-top: 15px;
+    background: transparent;
+    border: 1px solid transparent; }
+    #homePage .header .add i {
+      color: green;
+      font-size: 1.5em;
+      cursor: pointer; }
+#homePage h6 {
+  font: 400 1.8em "Tahoma";
+  text-align: center;
+  color: grey;
+  margin-bottom: 30px; }
+#homePage p {
+  font: 300 1em "Arial";
+  color: #a4a4a4;
+  margin-bottom: 8px; }
+  #homePage p div {
+    font: 300 1.2em "Arial";
+    color: #a4a4a4; }
+#homePage textarea {
+  width: 100%;
+  border: 1px solid #cccccc;
+  height: 150px;
+  padding: 10px;
+  color: grey; }
+#homePage input[type=submit] {
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  background: #78c4ed;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 15px; }
+  #homePage input[type=submit]:hover {
+    transition: 0.3s;
+    background: #63a1c3; }
+#homePage .box {
+  margin-bottom: 20px; }
+  #homePage .box p {
+    margin-top: 10px; }
+  #homePage .box .image-cont {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #78c4ed;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.5s; }
+    #homePage .box .image-cont:hover {
+      transition: 0.5s;
+      opacity: 0.75; }
+    #homePage .box .image-cont img {
+      width: 100%;
+      height: 100%; }
+
+#newsletterPage .header {
+  position: absolute;
+  left: -10px;
+  top: -20px; }
+  #newsletterPage .header p {
+    margin: 0;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background: #6bafd4;
+    display: table; }
+    #newsletterPage .header p i {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      font-size: 1.5em;
+      color: white; }
+  #newsletterPage .header span {
+    display: block;
+    margin-top: 40px;
+    margin-left: 10px;
+    float: left;
+    font: 300 1.2em "Arial";
+    color: #9b9b9b; }
+#newsletterPage .content form {
+  width: 100%;
+  padding: 60px 20px 20px 20px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 3px 3px grey;
+  position: relative; }
+  #newsletterPage .content form .form-box {
+    padding: 0 5px; }
+  #newsletterPage .content form .box {
+    margin-top: 30px;
+    padding-bottom: 10px; }
+    #newsletterPage .content form .box:first-child {
+      margin-top: 0; }
+  #newsletterPage .content form Button {
+    background-color: #858585;
+    box-shadow: none; }

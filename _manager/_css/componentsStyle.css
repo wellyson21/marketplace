@@ -1,0 +1,218 @@
+.show {
+  display: block !important; }
+
+.hide {
+  display: none !important; }
+
+#baseUrl, #managerUrl {
+  display: none; }
+
+form .contBlockImages {
+  padding: 0 15px;
+  margin-bottom: 15px; }
+  form .contBlockImages input {
+    display: none; }
+  form .contBlockImages small {
+    color: #aaa; }
+  form .contBlockImages .contImages {
+    border-radius: 4px;
+    border: 2px solid #fff;
+    box-shadow: 2px 2px 5px #ccc;
+    transition: .5s;
+    position: relative;
+    cursor: pointer; }
+    form .contBlockImages .contImages img {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit; }
+    form .contBlockImages .contImages .contSkin {
+      border-radius: inherit;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+      form .contBlockImages .contImages .contSkin .overlay {
+        border-radius: inherit;
+        width: 100%;
+        height: 100%;
+        display: table;
+        background: rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        text-align: center;
+        transition: .5s; }
+        form .contBlockImages .contImages .contSkin .overlay small {
+          font-size: 1em;
+          color: #fff;
+          display: table-cell;
+          vertical-align: middle; }
+        form .contBlockImages .contImages .contSkin .overlay:hover {
+          opacity: 1;
+          transition: .5s; }
+  form .contBlockImages .contOthersImages ul {
+    list-style: none;
+    padding: 0;
+    text-align: center; }
+    form .contBlockImages .contOthersImages ul li {
+      display: inline-table;
+      width: 25%; }
+      form .contBlockImages .contOthersImages ul li .contImages small {
+        font-size: .75em !important; }
+      form .contBlockImages .contOthersImages ul li .contImages img {
+        height: 100%; }
+  form .contBlockImages .contOthersImages input {
+    display: none; }
+
+.infoState .modInfoState {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #ddd;
+  text-align: center;
+  height: 200px;
+  width: 100%;
+  background: #fff;
+  display: table; }
+  .infoState .modInfoState .group-info {
+    display: table-cell;
+    vertical-align: middle;
+    color: #777; }
+  .infoState .modInfoState .loader p {
+    margin-top: 10px;
+    font-size: .7em; }
+
+.navbar {
+  z-index: 1 !important; }
+
+.card {
+  z-index: 0 !important; }
+  .card .card-header h4 {
+    position: relative;
+    margin-bottom: 15px !important; }
+    .card .card-header h4 button.btnCreate {
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: -8px; }
+  .card .card-body {
+    position: relative; }
+    .card .card-body .btnEdit {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      border-radius: 100%;
+      position: absolute;
+      right: 10px;
+      top: 5px; }
+      .card .card-body .btnEdit i {
+        font-size: 13px; }
+
+.contCustomCard {
+  margin-bottom: 30px; }
+  .contCustomCard .customCard {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #ddd; }
+    .contCustomCard .customCard .customCard-header {
+      position: relative;
+      cursor: pointer; }
+      .contCustomCard .customCard .customCard-header .thumbnail {
+        width: 90px;
+        height: 90px;
+        border-radius: 5px;
+        margin-right: 10px;
+        float: left; }
+      .contCustomCard .customCard .customCard-header .btnEdit {
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        border-radius: 100%;
+        position: absolute;
+        right: -3px;
+        top: -7px; }
+        .contCustomCard .customCard .customCard-header .btnEdit i {
+          font-size: 13px; }
+      .contCustomCard .customCard .customCard-header .customCard-data {
+        min-height: 90px;
+        border: 1px solid transparent; }
+        .contCustomCard .customCard .customCard-header .customCard-data .title {
+          font-weight: bolder;
+          font-size: 17px;
+          color: #444;
+          margin-top: 0 !important; }
+        .contCustomCard .customCard .customCard-header .customCard-data .subtitle {
+          margin-top: -8px;
+          font-size: 12px;
+          color: #555; }
+        .contCustomCard .customCard .customCard-header .customCard-data .category {
+          color: coral;
+          float: left; }
+        .contCustomCard .customCard .customCard-header .customCard-data .date {
+          color: #999;
+          float: right; }
+        .contCustomCard .customCard .customCard-header .customCard-data .category,
+        .contCustomCard .customCard .customCard-header .customCard-data .date {
+          margin-top: 10px;
+          font-size: 11px; }
+    .contCustomCard .customCard .customCard-body {
+      border-top: 1px solid #ddd;
+      padding-top: 10px; }
+      .contCustomCard .customCard .customCard-body p {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        font-size: 13px;
+        margin-bottom: 0; }
+
+#btnBackPage {
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.success {
+  background: rgba(36, 213, 90, 0.92);
+  padding: 10px;
+  text-align: center;
+  color: white; }
+
+.error {
+  background: rgba(248, 101, 101, 0.79);
+  padding: 10px;
+  text-align: center;
+  color: white; }
+
+.pagination-box {
+  margin-top: 20pt;
+  display: table !important; }
+  .pagination-box .pagination-container {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .pagination-box .pagination-container li {
+      float: left;
+      border-radius: 100%;
+      text-align: center;
+      margin: 1pt;
+      box-shadow: 0 0 3pt #a3a3a3;
+      width: auto !important; }
+      .pagination-box .pagination-container li a {
+        font: 600 7pt "Tahoma";
+        display: table-cell;
+        text-align: center;
+        width: 18px;
+        height: 18px;
+        vertical-align: middle; }
+    .pagination-box .pagination-container .activePage {
+      background-color: #9c9c9c !important; }
+      .pagination-box .pagination-container .activePage a {
+        color: whitesmoke !important; }
+    .pagination-box .pagination-container .disabledPage a {
+      color: #83828b !important; }
+    .pagination-box .pagination-container .next, .pagination-box .pagination-container .prev {
+      border: none;
+      box-shadow: none; }
+      .pagination-box .pagination-container .next a, .pagination-box .pagination-container .prev a {
+        color: #9c9c9c !important;
+        font-size: 12pt; }
+
+/*# sourceMappingURL=componentsStyle.css.map */

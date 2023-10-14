@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>{{ pageTitle }}</title>
+
+    {%autoescape 'html'%}
+    {{ components.configs_head | raw }}
+    {%endautoescape%}
+
+    {%autoescape 'html'%}
+    {{ components.default_files_css | raw }}
+    {%endautoescape%}
+
+    <link rel="stylesheet" href="{{ urls.appUrl }}_css/products.css"/>
+
+  </head>
+  <body ondragstart='return false' data-link="products">
+
+    <div class="main-wrapper">
+
+      <main class="main-panel">
+
+        {%autoescape 'html'%}
+          {{ components.header |raw }}
+        {%endautoescape%}
+
+
+        <section id="main-content" class="col2-to29-xs details-page">
+
+          <!-- Block reserved to SlideShow -->
+          <section id="slideMain" class="clearfix col1-to30-xs col2-to18-lg">
+            <article class="contSlide">
+              <div class="slideControllers">
+                <button class="fa fa-chevron-left prev"></button>
+                <button class="fa fa-chevron-right next"></button>
+
+                <div class="controllers">
+                  <span class="fa fa-play-circle-o play"></span>
+                  <span class="circles"></span>
+                  <span class="fa fa-stop-circle-o stop"></span>
+                </div>
+              </div>
+              <ul class="contElemSlide clearfix">
+
+                <li><img src="{{ data.thumbnail }}"></li>
+                {%for img in data.secondariesImages%}
+                <li><img src="{{ img }}"></li>
+                {%endfor%}
+              </ul>
+            </article>
+
+          </section>
+
+          <section class="col1-to30-xs col19-to30-lg details-box">
+            <div class="single_product_desc">
+              <a href="./">
+                <h2>{{ data.name }}</h2>
+              </a>
+              <p class="product-category"><span data-translate="false">{{ data.category }}</span></p>
+              <p class="product-location" data-translate="false"><span class="state" data-translate="false">{{ data.state }}</span> - {{ data.city }}</p>
+              <p class="product-price price"><span class="old-price" data-translate="false">R${{ data.price }}</span></p>
+
+              <!--<p class="product-desc">{{ data.productDescription.short }}</p>-->
+
+              <div class="profile-info">
+                <h6><span>Anunciante<span></span></span></h6>
+
+                <div class="wrapper clearfix">
+                  <img src="{{ data.advertiser.photo }}"/>
+                  <div class="right-box">
+                    <div class="table">
+                      <div class="cell">
+                        <p data-translate="false">{{ data.advertiser.name }}</p>
+                        <p data-translate="false">{{ data.advertiser.email }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col1-to30-xs">
+
+                {%if isLogged == false%}
+
+                  <a class="login"><button data-id="{{ data.id }}">Realize login para fazer a Proposta</button></a>
+                {%endif%}
+
+                {%if isLogged%}
+                  {%if isOwner == false %}
+                  {%if hasRegistered %}
+                    {%if hasPaid %}
+                      <input type="text" placeholder="Preço" class="priceField hide"/>
+                      <button class="makeOrder hide" data-id="{{ data.id }}">Fazer Proposta</button>
+                      <button class="cancelOrder" data-id="{{ data.id }}">Cancelar Proposta</button>
+                    {%endif%}
+                  {%endif%}
+
+                  {%if hasRegistered == false %}
+                    {%if hasPaid %}
+                      <input type="text" placeholder="Preço" class="priceField" value="{{ data.price }}"/>
+                      <button class="makeOrder" data-id="{{ data.id }}">Fazer Proposta</button>
+                      <button class="cancelOrder hide" data-id="{{ data.id }}">Cancelar Proposta</button>
+                    {%endif%}
+                  {%endif%}
+                  {%endif%}
+                {%endif%}
+
+              </div>
+            </div>
+          </section>
+
+          <section class="col1-to30-xs bottom-description">
+            <div class="description-header">
+              <ul>
+                <li>Descrição</li>
+              </ul>
+            </div>
+            <div class="description">
+              {%autoescape 'html'%}
+              {{ data.productDescription.long | raw }}
+              {%endautoescape%}
+            </div>
+          </section>
+
+        </section>
+
+        {%autoescape 'html'%}
+        {{ components.footer |raw }}
+        {%endautoescape%}
+
+      </main>
+    </div>
+
+        {%autoescape 'html'%}
+          {{ components.default_files_javascript |raw }}
+        {%endautoescape%}
+
+
+    <script>
+      $$(function(){
+        let mainSlide = $$("#slideMain");
+
+        Utilities.slideBlockUnique({
+          contSlide: mainSlide.find(".contSlide"),
+          contItemsSlide: mainSlide.find(".contElemSlide"),
+          itemsSlide: mainSlide.find(".contElemSlide li"),
+          prevBtn: mainSlide.find(".prev"),
+          nextBtn: mainSlide.find(".next"),
+          playBtn: mainSlide.find(".play"),
+          stopBtn: mainSlide.find(".stop"),
+          contDiscs: mainSlide.find(".circles"),
+          animateSlide: "disable"
+        });
+
+        let defaultPrice;
+
+        if($$(".priceField").length){
+
+          defaultPrice = $$(".priceField").val();
+          Utilities.validateNumberField($$(".priceField"));
+        }
+
+        $$(".makeOrder").click(function(){
+
+          let value =  parseFloat($$(".priceField").val()).toFixed(2);
+          if(isNaN(parseFloat(value)) || parseFloat(value) <= 1){ return; }
+
+          $$.ajax({
+            url: urls.baseUrl + "account/proposals/",
+            type: "post",
+            data: {action: "add",productId: $$(this).attr("data-id"), price: value},
+            success: function(r){
+
+              if(parseInt(r) === 1){
+
+                $$(".makeOrder").addClass("hide");
+                $$(".priceField").addClass("hide");
+                $$(".cancelOrder").removeClass("hide");
+                $$(".priceField").val(defaultPrice);
+              }
+            }
+          });
+        });
+
+        $$(".cancelOrder").click(function(){
+          $$.ajax({
+            url: urls.baseUrl + "account/proposals/",
+            type: "post",
+            data: {action: "remove",productId: $$(this).attr("data-id")},
+            success: function(r){
+
+
+              if(parseInt(r) === 1){
+
+                $$(".cancelOrder").addClass("hide");
+                $$(".priceField").removeClass("hide");
+                $$(".makeOrder").removeClass("hide");
+              }
+            }
+          });
+        });
+
+        if($$(".login").length > 0){
+          $$(".login").click(function(){
+
+            sessionStorage.setItem("loginRedirectUrl",window.location.href);
+            window.location.href = urls.baseUrl + "login/";
+          });
+        }else{
+
+          sessionStorage.removeItem("loginRedirectUrl");
+        }
+
+
+
+        (function settingsFormattedPrices() {
+
+          let products = $$('.product_price, .price');
+
+          products.map(function(k,v) {
+
+            let value = $$(v).text().replace('R$','');
+            let integer = value.split('.')[0];
+            let decimal = value.split('.')[1];
+
+            if(value > 999.99) {
+              let slice1 = integer.substring(integer.length - 3, 0);
+              let slice2 = integer.substring(integer.length, integer.length - 3);
+
+              integer = slice1+'.'+slice2;
+            }
+
+            value = 'R$' + integer + ( decimal ? ',<span style="font-size: .75em">'+decimal+'</span>' : ',<span style="font-size: .75em">00</span>' );
+
+            $$(v).html(value);
+          });
+
+          }());
+      });
+    </script>
+  </body>
+</html>

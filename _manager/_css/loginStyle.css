@@ -1,0 +1,20 @@
+.loginForm .card-title {
+  font-weight: 500;
+  text-transform: uppercase !important;
+  vertical-align: middle;
+  margin-top: 20px !important; }
+.loginForm .card-body .container-input-email,
+.loginForm .card-body .container-input-password {
+  margin-top: 15px !important; }
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #fff; }
+  .footer small {
+    text-align: center;
+    display: block; }
+
+/*# sourceMappingURL=loginStyle.css.map */

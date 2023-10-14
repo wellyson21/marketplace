@@ -1,0 +1,84 @@
+<section id="advertsPage" class="col2-to29-xs col1-to30-lg">
+
+  <div class="header col1-to30-xs col2-to29-lg">
+
+    <p><i class="fab fa-adversal"></i></p>
+
+    <button data-ng-show="profile.advertsEnabled && general.hasPayed" class="addAdvert" data-ng-click="addAdvert()"><i  class="fas fa-plus-circle"></i></button>
+  </div>
+
+  <div class="payTax" data-ng-show="!general.hasPayed && !loading">
+
+    <p class="title col1-to30-xs" data-ng-show="!profile.advertsEnabled">Os anúncios não estão ativados ainda</p>
+    <p class="subtitle col1-to30-xs" data-ng-show="!profile.advertsEnabled">Para Ativar realize o primeiro pagamento.</p>
+    <p data-ng-show="profile.advertsEnabled">Deixe sua mensalidade sempre em dias </p>
+
+    <form id="col4-to26-xs" data-enable-adverts="{{ profile.advertsEnabled ? 'false' : 'true' }}">
+
+      <div class="imagePayPal">
+        <img src="{{appUrl}}_medias/_images/assets/PayPal.png"/>
+      </div>
+
+      <input type="hidden" name="action" value="buy"/>
+      <input type="text"  name="amount" id="totalPrice" disabled value="{{ general.fee }}" class="i_amount"/>
+
+      <p class="notification clearfix"></p>
+
+      <input type="submit" value="Realizar Pagamento">
+    </form>
+  </div>
+
+  <div class="content col1-to30-xs col2-to29-lg">
+
+    <div class="loader">
+      <div class="table">
+        <div class="cell">
+          <i class="fas fa-spinner fa-pulse"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="no-proposal" data-ng-show="adverts.length == 0 && profile.advertsEnabled">
+      <p><i class="fas fa-ad"></i> <span>Não há Anúncios no momento.</span></p>
+    </div>
+
+    <ul data-ng-show="profile.advertsEnabled && general.hasPayed && !loading">
+
+      <li data-ng-repeat="advert in adverts" data-ng-click="viewAdvert(advert)">
+        <div class="top-info clearfix">
+          <img src="{{ advert.thumbnail }}"/>
+
+          <div class="right-info">
+            <p class="name">{{ advert.name }}</p>
+            <span class="date" data-translate="false">{{ advert.status === "released" ? "Aprovado" :(advert.status === "revision") ? "Em resvisão" : "Não Aprovado"}}</span>
+            <!--<span class="date" data-translate="false">{{ advert.date }}</span>-->
+            <p class="price" data-translate="false">R${{ advert.price }}</p>
+          </div>
+
+          <i class="fas fa-times-circle" data-ng-click="removeAdvert($event, $index, advert.id)"></i>
+          <i class="fas fa-edit" data-ng-click="editAdvert($event,advert)"></i>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="pagination-box" style="opacity: {{hasPaginationLinks ? 1 : 0 }};">
+      <ul class="pagination-container clearfix">
+        <li class="prev">
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li ng-repeat="data in paginationLinks" data-documentId="{{ $index }}"><a href="#">{{ $index + 1 }}</a></li>
+        <li class="next">
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+
+</section>

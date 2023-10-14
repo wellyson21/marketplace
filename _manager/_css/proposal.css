@@ -1,0 +1,118 @@
+#proposalPage .header {
+  background: rgba(105, 172, 208, 0.47);
+  margin-bottom: 20px; }
+  #proposalPage .header ul {
+    list-style: none;
+    display: table;
+    margin: auto;
+    padding: 10px; }
+    #proposalPage .header ul li {
+      float: left;
+      padding: 10px 20px;
+      border: 1px solid #74bae1 !important;
+      color: #6e6e6e;
+      cursor: pointer; }
+      #proposalPage .header ul li:first-child {
+        margin-right: 1px; }
+#proposalPage .content .no-data {
+  margin-top: 30px;
+  opacity: 0; }
+  #proposalPage .content .no-data p {
+    text-align: center; }
+    #proposalPage .content .no-data p i {
+      display: block;
+      font-size: 2.5em;
+      color: #747474; }
+    #proposalPage .content .no-data p span {
+      margin-top: 5px;
+      display: block;
+      font: 400 0.95em "Tahoma";
+      color: gray; }
+#proposalPage .content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  width: 100%; }
+  #proposalPage .content ul li {
+    width: 100%;
+    padding: 10px;
+    display: block;
+    box-shadow: 0 0 5px lightgrey;
+    margin-top: 10px; }
+    #proposalPage .content ul li:first-child {
+      margin-top: 0; }
+    #proposalPage .content ul li img {
+      width: 105px;
+      height: 105px;
+      border-radius: 100%;
+      float: left; }
+    #proposalPage .content ul li .right-info {
+      float: left;
+      margin-left: 10px; }
+    #proposalPage .content ul li .top-info {
+      position: relative; }
+      #proposalPage .content ul li .top-info .name {
+        margin-top: 10px;
+        font: 400 1.2em "Tahoma";
+        color: gray; }
+      #proposalPage .content ul li .top-info .price {
+        font: 400 0.9em "Tahoma";
+        color: #c69e2f;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important; }
+      #proposalPage .content ul li .top-info .priceLabel {
+        font: 400 0.8em "Tahoma";
+        color: #a3605a;
+        margin-bottom: 0 !important;
+        margin-top: 0 !important; }
+      #proposalPage .content ul li .top-info .date, #proposalPage .content ul li .top-info .category {
+        font: 400 0.7em "Tahoma";
+        color: #a3605a;
+        margin-top: 0;
+        display: block; }
+      #proposalPage .content ul li .top-info .category {
+        margin-top: -18px; }
+      #proposalPage .content ul li .top-info i {
+        position: absolute;
+        top: 45px;
+        right: 10px;
+        color: #78c4ed;
+        font-size: 1.5em;
+        cursor: pointer;
+        transition: 0.3s; }
+        #proposalPage .content ul li .top-info i:hover {
+          transition: 0.3s;
+          color: #62a2c3; }
+        #proposalPage .content ul li .top-info i.fa-times-circle {
+          color: #ff6466;
+          right: 38px; }
+    #proposalPage .content ul li .bottom-info {
+      border-top: 1px solid rgba(218, 218, 218, 0.86);
+      margin-top: 10px;
+      margin-bottom: 0;
+      padding: 0;
+      display: none;
+      clear: both; }
+      #proposalPage .content ul li .bottom-info p {
+        text-align: center;
+        font: 400 1.2em "Tahoma";
+        color: gray;
+        margin: 10px 0; }
+      #proposalPage .content ul li .bottom-info .wrapper {
+        display: table;
+        margin: auto;
+        padding: 0;
+        height: 150px; }
+        #proposalPage .content ul li .bottom-info .wrapper img {
+          float: none;
+          display: table;
+          margin: auto; }
+        #proposalPage .content ul li .bottom-info .wrapper .right-info {
+          margin-top: 10px;
+          float: none; }
+        #proposalPage .content ul li .bottom-info .wrapper p {
+          margin: 0;
+          font: 300 0.85em "Tahoma"; }
+
+/*# sourceMappingURL=proposal.css.map */

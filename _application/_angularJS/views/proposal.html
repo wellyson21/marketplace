@@ -1,0 +1,82 @@
+<section id="proposalPage" class="col2-to29-xs col1-to30-lg">
+
+  <div class="header col1-to30-xs col2-to29-lg">
+
+    <ul>
+      <li>Enviadas</li>
+      <li data-ng-show="profile.advertsEnabled">Recebidas</li>
+    </ul>
+  </div>
+
+  <div class="content col1-to30-xs col2-to29-lg">
+
+    <div class="loader">
+      <div class="table">
+        <div class="cell">
+          <i class="fas fa-spinner fa-pulse"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="no-proposal" data-ng-show="proposals.length === 0">
+      <p><i class="fas fa-clipboard-list"></i> <span>Não há propostas no momento.</span></p>
+    </div>
+
+    <ul class="proposals-container">
+
+      <li data-ng-repeat="proposal in proposals">
+        <div class="top-info clearfix">
+          <img src="{{ proposal.thumbnail }}"/>
+
+          <div class="right-info">
+            <p class="name">{{ proposal.name }}</p>
+            <span class="date" data-translate="false">{{ proposal.category }}</span>
+            <span class="date" data-translate="false">{{ proposal.date }}</span>
+            <p class="price" data-translate="false"><span class="priceLabel">Seu preço: </span>R${{ proposal.price }}</p>
+            <p class="price" data-translate="false"><span class="priceLabel">Preço do cliente: </span> R${{ proposal.customerPrice }}</p>
+            <p class="date" data-translate="false">{{ proposal.date.toLocaleDateString() }}</p>
+          </div>
+
+          <i class="fas fa-times-circle" data-ng-click="cancelProposal($event, $index, proposal.id)"></i>
+          <i class="fas fa-info-circle" data-ng-click="showInfo($event, $index, proposal.id)"></i>
+        </div>
+
+        <div class="bottom-info clearfix">
+
+          <p>Contato</p>
+
+          <div class="wrapper">
+            <img src="{{ proposal.info.photo }}"/>
+
+            <div class="right-info">
+              <p data-translate="false">{{ proposal.info.name }}</p>
+              <p data-translate="false">{{ proposal.info.email }}</p>
+              <p data-translate="false">{{ proposal.info.contacts.phone }}</p>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+    </ul>
+
+    <div class="pagination-box" style="opacity: {{hasPaginationLinks ? 1 : 0 }};">
+      <ul class="pagination-container clearfix">
+        <li class="prev">
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li ng-repeat="data in paginationLinks" data-documentId="{{ $index }}"><a href="#">{{ $index + 1 }}</a></li>
+        <li class="next">
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+
+</section>

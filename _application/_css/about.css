@@ -1,0 +1,20 @@
+#main-content {
+  opacity: 0;
+  padding: 20px 90px 50px 90px; }
+  #main-content h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    font: 600 35px "Tahoma";
+    text-shadow: 2px -1px 1px black;
+    color: #949494; }
+  #main-content p {
+    text-align: center;
+    text-indent: 10px;
+    color: #676767;
+    line-height: 35px !important; }
+
+@media (min-width: 0) and (max-width: 768px) {
+  #main-content {
+    padding: 20px 20px 20px 20px !important; } }
+
+/*# sourceMappingURL=about.css.map */

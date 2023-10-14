@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>{{ pageTitle }}</title>
+
+    {%autoescape 'html'%}
+    {{ components.configs_head | raw }}
+    {%endautoescape%}
+
+    {%autoescape 'html'%}
+    {{ components.default_files_css | raw }}
+    {%endautoescape%}
+
+
+    <link rel="stylesheet" href="{{ urls.appUrl }}_css/contacts.css"/>
+
+  </head>
+  <body>
+
+    <div class="main-wrapper">
+
+      <main class="main-panel">
+
+        {%autoescape 'html'%}
+          {{ components.header |raw }}
+        {%endautoescape%}
+
+        <section id="main-content">
+
+          <iframe class="col2-to29-xs map" src="https://www.google.com/maps/embed/v1/view?key={{data.mapsKey}}&center={{ data.position.latitude}},{{ data.position.longitude }}%20&zoom=19%20&maptype=satellite"></iframe>
+
+          <article class="col2-to29-xs">
+            <div class="col1-to30-xs col1-to10-lg box">
+              <ul>
+
+                <li>
+                  <i class="fas fa-address-card"></i>
+                  <div>
+                    <p>{{ data.address.city }} - {{ data.address.state }}</p>
+                    <small>{{ data.address.addressLine }}</small>
+                  </div>
+                </li>
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  <div>
+                    <p>{{ data.contacts.email.value }}</p>
+                    <small>{{ data.contacts.email.label }}</small>
+                  </div>
+                </li>
+                <li>
+                  <i class="fas fa-phone"></i>
+                  <div>
+                    <p>{{ data.contacts.phone.value }}</p>
+                    <small>{{ data.contacts.phone.label }}</small>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+            <form class="col1-to30-xs col11-to30-lg contactForm">
+              <div class="col1-to30-xs col1-to15-lg box">
+                <input type="text" required placeholder="Nome" name="name" class="name"/>
+                <input type="email" required placeholder="Email" name="email" class="email"/>
+                <input type="text" required name="subject" placeholder="Assunto" class="subject"/>
+              </div>
+              <div class="col1-to30-xs col16-to30-lg box">
+
+                <textarea placeholder="Mensagem" name="message" required class="message"></textarea>
+
+                <div class="alert success">Mensagem enviada com successo.</div>
+                <div class="alert error">Falha ao enviar menssagem. Por favor tente novamente.</div>
+
+                <button type="submit" class="sendMessageBtn">Enviar Mensagem</button>
+              </div>
+            </form>
+          </article>
+        </section>
+
+        {%autoescape 'html'%}
+        {{ components.footer |raw }}
+        {%endautoescape%}
+
+      </main>
+
+    </div>
+
+    {%autoescape 'html'%}
+      {{ components.default_files_javascript |raw }}
+    {%endautoescape%}
+
+    <script>
+      $$(function(){
+
+        $$(".contactForm").submit(function(evt){
+
+          evt.preventDefault();
+          let data = $$(this).serialize();
+
+          $$.ajax({
+            url: urls.baseUrl + "/contact/sendMessage/",
+            type: "post",
+            data: data,
+            success: function(r){
+
+              if(parseInt(r) === 1){
+
+                $$(".error").fadeOut(0);
+                $$(".success").fadeIn(500).delay(2500).fadeOut(500);
+              }else{
+
+                $$(".success").fadeOut(0);
+                $$(".error").fadeIn(500).delay(2500).fadeOut(500);
+              }
+            }
+          });
+        });
+      });
+    </script>
+
+  </body>
+</html>

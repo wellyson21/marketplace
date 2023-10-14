@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>{{ pageTitle }}</title>
+
+    {%autoescape 'html'%}
+    {{ components.configs_head | raw }}
+    {%endautoescape%}
+
+    {%autoescape 'html'%}
+    {{ components.default_files_css | raw }}
+    {%endautoescape%}
+
+    <link rel="stylesheet" href="{{ urls.appUrl }}_css/index.css"/>
+    <link rel="stylesheet" href="{{ urls.systemUrl }}_css/bootstrap/css/bootstrap.min.css"/>
+
+  </head>
+  <body>
+
+    <div class="main-wrapper">
+
+      <main class="main-panel">
+
+        {%autoescape 'html'%}
+          {{ components.header |raw }}
+        {%endautoescape%}
+
+        <section id="main-content">
+
+          <!-- Anúncios mais procurados -->
+          <section class="col2-to29-xs col2-to29-lg contAnuncios">
+            <h2><span>Mais Procurados<span></span></span></h2>
+
+            <div class="contTopAnuncios">
+              <!-- <div class="topAnunciosControls">
+                <button class="fa fa-angle-left btnPrev"></button>
+                <button class="fa fa-angle-right btnNext"></button>
+              </div> -->
+              <div class="topAnuncios  container">
+                <ul class="row">
+
+                  {%for product in topProducts%}
+                    <li class="item  col-12  col-sm-6 col-md-3 col-xl-2">
+                      <div class="wrapper">
+                        
+                          <div class="imgAnuncio">
+                              <a href="{{urls.baseUrl}}products/{{ product.id }}/"><img src="{{ product.thumbnail }}"/></a>
+                          </div>
+                          <div class="dataAnuncio">
+                            <a href="{{urls.baseUrl}}products/{{ product.id }}/"><h3 class="title">{{ product.name }}</h3></a>
+                            <h4 class="location" data-translate="false">{{ product.city }} - <span class="state" data-translate="false">{{ product.state }}</span></h4>
+                            <h3 class="price" data-translate="false">R${{ product.price }}</h3>
+
+                            <a href="{{urls.baseUrl}}products/{{ product.id }}/" class="more-details"><button>Mais Detalhes</button></a>
+                          </div>
+                      </div>
+                    
+                    </li>
+                  {%endfor%}
+
+                </ul>
+              </div>
+            </div>
+
+            <a href="{{ urls.baseUrl }}products"><button class="watchMore">Ver outros anúncios</button></a>
+          </section>
+
+        </section>
+
+        {%autoescape 'html'%}
+        {{ components.footer |raw }}
+        {%endautoescape%}
+
+      </main>
+
+    </div>
+
+    {%autoescape 'html'%}
+      {{ components.default_files_javascript |raw }}
+    {%endautoescape%}
+
+    <script src="{{ urls.appUrl }}_js/index.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,51 @@
+#mainPage form {
+  width: 100%;
+  padding: 20pt; }
+  #mainPage form .fee {
+    margin-bottom: 10px; }
+  #mainPage form h6 {
+    font: 400 10pt "Arial";
+    margin-top: 40pt;
+    color: #a5a5a5; }
+    #mainPage form h6.notifications-key {
+      margin-top: 10pt; }
+  #mainPage form Button {
+    background-color: #858585;
+    box-shadow: none; }
+  #mainPage form .logo {
+    margin-bottom: 30px; }
+    #mainPage form .logo div {
+      position: relative;
+      max-width: 200px;
+      display: table;
+      margin: auto;
+      box-shadow: 0 0 5px #989898; }
+      #mainPage form .logo div img {
+        width: 200px; }
+    #mainPage form .logo button {
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      border: 1px solid transparent;
+      vertical-align: middle;
+      padding: 0;
+      height: 25px;
+      width: 25px;
+      border-radius: 100%;
+      background: #373366;
+      cursor: pointer; }
+      #mainPage form .logo button:active {
+        border: 1px solid transparent;
+        outline: none; }
+      #mainPage form .logo button i {
+        padding: 0;
+        font-size: 1.1em;
+        margin-top: 3px;
+        color: #78c4ed; }
+  #mainPage form .medias {
+    margin-bottom: 30px;
+    box-shadow: 0 0 3px lightgrey;
+    padding: 20px;
+    border-radius: 5px; }
+
+/*# sourceMappingURL=settings.css.map */

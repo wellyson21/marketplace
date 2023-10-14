@@ -1,0 +1,105 @@
+#login article {
+  margin: 30px 0;
+  background-size: 100% 100%;
+  position: relative; }
+  #login article .alert {
+    display: none;
+    margin-top: 5px; }
+  #login article .main-table {
+    display: table;
+    width: 100%;
+    height: 400px; }
+    #login article .main-table .main-cell {
+      display: table-cell;
+      vertical-align: middle; }
+  #login article .box {
+    padding: 10px 10px 30px 10px;
+    margin-top: 10px; }
+    #login article .box.registerBox, #login article .box.forgotPasswordBox {
+      display: none; }
+    #login article .box.forgotPasswordBox, #login article .box.registerBox {
+      min-height: 200px; }
+      #login article .box.forgotPasswordBox .showLogin, #login article .box.registerBox .showLogin {
+        width: auto;
+        display: inline;
+        margin: 0 10px 0 0 !important;
+        height: auto;
+        background: transparent;
+        color: #619ebf;
+        cursor: pointer; }
+        #login article .box.forgotPasswordBox .showLogin:hover, #login article .box.registerBox .showLogin:hover {
+          transition: 0.5s;
+          background: transparent;
+          color: #78c4ed; }
+    #login article .box .table {
+      border: 1px solid transparent;
+      display: table;
+      margin: auto; }
+      #login article .box .table .cell {
+        vertical-align: middle;
+        display: table-cell; }
+        #login article .box .table .cell form {
+          display: table;
+          margin: 0 auto;
+          width: 70%; }
+          #login article .box .table .cell form input {
+            width: 100%;
+            display: block;
+            height: 35px;
+            margin-top: 5px;
+            border: 1px solid lightgrey;
+            color: #9b9b9b;
+            padding: 5px; }
+            #login article .box .table .cell form input[type=submit] {
+              padding: auto;
+              cursor: pointer;
+              background: #78c4ed;
+              border: 1px solid transparent;
+              color: white;
+              transition: 0.5s; }
+              #login article .box .table .cell form input[type=submit]:hover {
+                transition: 0.5s;
+                background: #373366; }
+          #login article .box .table .cell form .showForgotPassWord {
+            color: #9b9b9b;
+            text-align: right;
+            width: 100%;
+            margin-top: 5px;
+            font: 400 14px "Tahoma";
+            transition: 0.3s; }
+    #login article .box .bottom-box {
+      margin-top: 30px; }
+    #login article .box h5, #login article .box h6 {
+      text-align: center;
+      margin-bottom: 15px;
+      font: 400 16px "Tahoma";
+      color: #7b7b80; }
+    #login article .box h5 {
+      margin-top: 0;
+      font-size: 25px; }
+      #login article .box h5 i {
+        margin-right: 10px;
+        cursor: pointer; }
+        #login article .box h5 i:hover {
+          color: #78c4ed; }
+    #login article .box p {
+      text-align: center;
+      font: 400 14px "Tahoma";
+      margin-bottom: 10px;
+      color: #7b7b80; }
+    #login article .box .showRegister, #login article .box .showLogin {
+      width: 40%;
+      display: table;
+      margin: 0 auto !important;
+      height: 35px;
+      background: #78c4ed;
+      color: white;
+      cursor: pointer; }
+      #login article .box .showRegister:hover, #login article .box .showLogin:hover {
+        transition: 0.5s;
+        background: #373366; }
+    #login article .box a {
+      display: table;
+      width: 50%;
+      margin: auto;
+      text-decoration: none; }

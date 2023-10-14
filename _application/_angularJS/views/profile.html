@@ -1,0 +1,52 @@
+<section id="profilePage" class="col2-to29-xs col2-to29-lg">
+
+  <div class="header">
+
+    <button style="opacity: {{data ? 1 : 0}}" class="edit-button"><i class="fas fa-edit"></i></button>
+
+    <div class="photo-container">
+
+      <img src="{{ data.photo }}"/>
+      <input type="file" class="image hide" />
+      <button><i data-ng-click="choseImage($event)" style="opacity: {{data ? 1 : 0}}" class="fas fa-image"></i></button>
+    </div>
+  </div>
+
+  <div class="contacts">
+
+    <h6>Informações de contato:</h6>
+
+    <p data-ng-show="data.name">
+      <i class="fas fa-paragraph"></i>
+      <span data-translate="false">{{ data.name }}</span>
+    </p>
+    <p data-ng-show="data.email">
+      <i class="fas fa-envelope"></i>
+      <span data-translate="false">{{ data.email }}</span>
+    </p>
+    <p data-ng-show="data.contacts.phone">
+      <i class="fas fa-phone"></i>
+      <span data-translate="false">{{ data.contacts.phone }}</span>
+    </p>
+  </div>
+
+
+  <div class="address">
+
+    <h6>Endereço:</h6>
+
+    <p class="no-data" data-ng-show="!hasData">
+      Não Há nenhum endereço configurado.
+    </p>
+
+    <p data-ng-show="hasData">
+
+      <span data-translate="false">{{ data.address.postalCode }}</span>
+      <span data-translate="false">{{ data.address.addressLine }}</span>
+      <span data-translate="false">{{ data.address.city }} <small data-ng-show="data.address.city && data.address.state">-</small> {{ data.address.state }}</span>
+      <span data-translate="false">{{ data.address.country }}</span>
+    </p>
+
+  </div>
+
+</section>

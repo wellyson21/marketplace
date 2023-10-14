@@ -1,0 +1,49 @@
+#contactsPage .header {
+  position: absolute;
+  left: -10px;
+  top: -20px; }
+  #contactsPage .header p {
+    margin: 0;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background: #6bafd4;
+    display: table; }
+    #contactsPage .header p i {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      font-size: 1.5em;
+      color: white; }
+  #contactsPage .header span {
+    display: block;
+    margin-top: 35px;
+    margin-left: 10px;
+    float: left;
+    font: 400 1.5em "Arial";
+    color: #9b9b9b; }
+#contactsPage .content form {
+  width: 100%;
+  padding: 60px 20px 20px 20px !important;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 3px 3px grey;
+  border: none !important;
+  position: relative; }
+  #contactsPage .content form .form-box {
+    padding: 0 5px; }
+  #contactsPage .content form h4 {
+    font: 400 1em "Arial";
+    margin-top: 40px;
+    color: grey;
+    padding: 10px 10px;
+    border-left: 6px solid #373366; }
+  #contactsPage .content form .box {
+    margin-top: 30px;
+    padding-bottom: 10px; }
+    #contactsPage .content form .box:first-child {
+      margin-top: 0; }
+  #contactsPage .content form Button {
+    background-color: #858585;
+    box-shadow: none; }
+
+/*# sourceMappingURL=contacts.css.map */

@@ -1,0 +1,351 @@
+.card {
+  z-index: 0 !important; }
+  .card .card-header h4 {
+    position: relative;
+    margin-bottom: 15px !important; }
+    .card .card-header h4 button.btnCreate {
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: -8px; }
+  .card .card-body {
+    position: relative; }
+    .card .card-body .btnEdit, .card .card-body .btnAccept, .card .card-body .btnRefuse {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      border-radius: 100%;
+      position: absolute;
+      right: 10px;
+      top: 5px; }
+      .card .card-body .btnEdit i, .card .card-body .btnAccept i, .card .card-body .btnRefuse i {
+        font-size: 13px; }
+      .card .card-body .btnEdit .refuse, .card .card-body .btnAccept .refuse, .card .card-body .btnRefuse .refuse {
+        background: #ff7069;
+        right: 45px; }
+
+.contCustomCard {
+  margin-bottom: 30px; }
+  .contCustomCard .customCard {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #ddd; }
+    .contCustomCard .customCard .customCard-header {
+      position: relative;
+      cursor: pointer;
+      margin-bottom: 10px; }
+      .contCustomCard .customCard .customCard-header .thumbnail {
+        width: 90px;
+        height: 90px;
+        border-radius: 5px;
+        margin-right: 10px;
+        float: left; }
+      .contCustomCard .customCard .customCard-header .btnEdit, .contCustomCard .customCard .customCard-header .btnAccept, .contCustomCard .customCard .customCard-header .btnRefuse {
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        border-radius: 100%;
+        position: absolute;
+        right: -3px;
+        top: -7px; }
+        .contCustomCard .customCard .customCard-header .btnEdit i, .contCustomCard .customCard .customCard-header .btnAccept i, .contCustomCard .customCard .customCard-header .btnRefuse i {
+          font-size: 13px; }
+        .contCustomCard .customCard .customCard-header .btnEdit.btnRefuse, .contCustomCard .customCard .customCard-header .btnAccept.btnRefuse, .contCustomCard .customCard .customCard-header .btnRefuse.btnRefuse {
+          background: #ff7069;
+          right: 30px; }
+      .contCustomCard .customCard .customCard-header .customCard-data {
+        min-height: 90px;
+        border: 1px solid transparent; }
+        .contCustomCard .customCard .customCard-header .customCard-data .title {
+          font-weight: bolder;
+          font-size: 17px;
+          color: #444;
+          margin-top: 0 !important; }
+        .contCustomCard .customCard .customCard-header .customCard-data .subtitle {
+          margin-top: -8px;
+          font-size: 12px;
+          color: #555; }
+        .contCustomCard .customCard .customCard-header .customCard-data .category {
+          color: coral;
+          float: left;
+          margin-top: 0; }
+        .contCustomCard .customCard .customCard-header .customCard-data .date {
+          color: #999;
+          float: right; }
+        .contCustomCard .customCard .customCard-header .customCard-data .category,
+        .contCustomCard .customCard .customCard-header .customCard-data .date {
+          margin-top: 10px;
+          font-size: 11px; }
+        .contCustomCard .customCard .customCard-header .customCard-data .country {
+          display: block;
+          margin-top: 0; }
+    .contCustomCard .customCard .customCard-body {
+      border-top: 1px solid #ddd;
+      padding-top: 10px; }
+      .contCustomCard .customCard .customCard-body p {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        font-size: 13px;
+        margin-bottom: 0; }
+      .contCustomCard .customCard .customCard-body .title {
+        font: 400 0.95em "Tahoma";
+        margin-bottom: 10px;
+        color: #4c4c4c; }
+      .contCustomCard .customCard .customCard-body .content {
+        font: 400 0.9em "Tahoma";
+        color: grey;
+        padding: 0 10px 10px 10px; }
+
+#advertsPage .header {
+  border-bottom: 1px solid #6bafd4;
+  margin: 20px 0; }
+  #advertsPage .header p {
+    margin: 0;
+    float: left;
+    width: 50px;
+    height: 50px;
+    background: #6bafd4;
+    display: table; }
+    #advertsPage .header p i {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      font-size: 1.5em;
+      color: white; }
+  #advertsPage .header .addAdvert {
+    float: right;
+    margin-top: 15px;
+    background: transparent;
+    border: 1px solid transparent; }
+    #advertsPage .header .addAdvert i {
+      color: green;
+      font-size: 1.5em;
+      cursor: pointer; }
+#advertsPage .switch {
+  background: rgba(105, 172, 208, 0.47);
+  margin-bottom: 20px; }
+  #advertsPage .switch ul {
+    list-style: none;
+    display: table;
+    margin: auto;
+    padding: 10px; }
+    #advertsPage .switch ul li {
+      float: left;
+      padding: 10px 20px;
+      border: 1px solid #74bae1 !important;
+      color: #6e6e6e;
+      cursor: pointer; }
+      #advertsPage .switch ul li:first-child {
+        margin-right: 1px; }
+#advertsPage .content .no-data {
+  margin-top: 30px;
+  opacity: 0; }
+  #advertsPage .content .no-data p {
+    text-align: center; }
+    #advertsPage .content .no-data p i {
+      display: block;
+      font-size: 2.5em;
+      color: #747474; }
+    #advertsPage .content .no-data p span {
+      margin-top: 5px;
+      display: block;
+      font: 400 0.95em "Tahoma";
+      color: gray; }
+#advertsPage .content ul {
+  list-style: none;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+  #advertsPage .content ul li {
+    width: 100%;
+    padding: 10px;
+    display: block;
+    box-shadow: 0 0 5px lightgrey;
+    cursor: pointer;
+    margin-top: 15px; }
+    #advertsPage .content ul li img {
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      float: left; }
+    #advertsPage .content ul li .right-info {
+      float: left;
+      margin-left: 10px; }
+    #advertsPage .content ul li .top-info {
+      position: relative; }
+      #advertsPage .content ul li .top-info .name {
+        margin-top: 10px;
+        font: 400 1.2em "Tahoma";
+        color: gray; }
+      #advertsPage .content ul li .top-info .price {
+        font: 400 0.9em "Tahoma";
+        color: #c69e2f; }
+      #advertsPage .content ul li .top-info .date {
+        font: 400 0.7em "Tahoma";
+        color: #a3605a;
+        margin-top: -12px;
+        display: block; }
+      #advertsPage .content ul li .top-info i {
+        position: absolute;
+        top: 35px;
+        right: 10px;
+        color: #78c4ed;
+        font-size: 1.3em;
+        cursor: default;
+        transition: 0.3s; }
+        #advertsPage .content ul li .top-info i:hover {
+          transition: 0.3s;
+          color: #62a2c3; }
+        #advertsPage .content ul li .top-info i.fa-times-circle {
+          color: #ff6466;
+          right: 40px; }
+    #advertsPage .content ul li .bottom-info {
+      border-top: 1px solid rgba(218, 218, 218, 0.86);
+      margin-top: 10px;
+      margin-bottom: 0;
+      padding: 0;
+      display: none;
+      clear: both; }
+      #advertsPage .content ul li .bottom-info p {
+        text-align: center;
+        font: 400 1.2em "Tahoma";
+        color: gray;
+        margin: 10px 0; }
+      #advertsPage .content ul li .bottom-info .wrapper {
+        display: table;
+        margin: auto; }
+        #advertsPage .content ul li .bottom-info .wrapper img {
+          float: none;
+          display: table;
+          margin: auto; }
+        #advertsPage .content ul li .bottom-info .wrapper .right-info {
+          margin-top: 10px;
+          float: none; }
+        #advertsPage .content ul li .bottom-info .wrapper p {
+          margin: 0;
+          font: 300 0.85em "Tahoma"; }
+
+#viewAdvert .contCustomCard .customCard .customCard-header {
+  position: relative; }
+  #viewAdvert .contCustomCard .customCard .customCard-header .create {
+    float: none;
+    position: absolute;
+    bottom: 0;
+    right: 5pt; }
+  #viewAdvert .contCustomCard .customCard .customCard-header .state {
+    text-transform: uppercase; }
+  #viewAdvert .contCustomCard .customCard .customCard-header .country {
+    text-transform: capitalize;
+    margin-top: -5px; }
+  #viewAdvert .contCustomCard .customCard .customCard-header .date, #viewAdvert .contCustomCard .customCard .customCard-header .category {
+    display: block;
+    margin-top: -10px !important; }
+  #viewAdvert .contCustomCard .customCard .customCard-header .category {
+    float: none; }
+  #viewAdvert .contCustomCard .customCard .customCard-header .subtitle {
+    display: block; }
+  #viewAdvert .contCustomCard .customCard .customCard-header .customCard-data .expire {
+    display: block;
+    margin-top: -10pt; }
+
+#createUpdateAdvertPage .pricefield {
+  height: 45px !important; }
+#createUpdateAdvertPage .customCard-body {
+  margin-top: 10px !important; }
+  #createUpdateAdvertPage .customCard-body section .title {
+    font-size: 0.75em;
+    font-style: italic;
+    color: indianred; }
+  #createUpdateAdvertPage .customCard-body section .content {
+    margin-left: 15px;
+    margin-bottom: 10px; }
+#createUpdateAdvertPage .alert {
+  margin: 10px;
+  color: white; }
+#createUpdateAdvertPage #formPromotion .contImages {
+  position: relative; }
+#createUpdateAdvertPage #formPromotion .removeImage {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: red;
+  padding: 0 2px 2px 0;
+  color: white;
+  font: 600 9pt "Tahoma";
+  z-index: 100; }
+#createUpdateAdvertPage form .form-group {
+  padding: 0 10px;
+  margin-top: 10px; }
+#createUpdateAdvertPage form input[type=text], #createUpdateAdvertPage form input[type=number], #createUpdateAdvertPage form textarea, #createUpdateAdvertPage form select {
+  width: 100%;
+  resize: none;
+  border: 1px solid lightgrey;
+  padding: 10px; }
+#createUpdateAdvertPage form input[type=text], #createUpdateAdvertPage form input[type=number] {
+  height: 35px; }
+#createUpdateAdvertPage form label {
+  color: #757575; }
+#createUpdateAdvertPage form .contBlockImages {
+  padding: 0 15px;
+  margin-bottom: 15px; }
+  #createUpdateAdvertPage form .contBlockImages input {
+    display: none; }
+  #createUpdateAdvertPage form .contBlockImages small {
+    color: #aaa; }
+  #createUpdateAdvertPage form .contBlockImages .contImages {
+    border-radius: 4px;
+    border: 2px solid #fff;
+    box-shadow: 2px 2px 5px #ccc;
+    transition: .5s;
+    position: relative;
+    cursor: pointer; }
+    #createUpdateAdvertPage form .contBlockImages .contImages img {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit; }
+    #createUpdateAdvertPage form .contBlockImages .contImages .contSkin {
+      border-radius: inherit;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+      #createUpdateAdvertPage form .contBlockImages .contImages .contSkin .overlay {
+        border-radius: inherit;
+        width: 100%;
+        height: 100%;
+        display: table;
+        background: rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        text-align: center;
+        transition: .5s; }
+        #createUpdateAdvertPage form .contBlockImages .contImages .contSkin .overlay small {
+          font-size: 1em;
+          color: #fff;
+          display: table-cell;
+          vertical-align: middle; }
+        #createUpdateAdvertPage form .contBlockImages .contImages .contSkin .overlay:hover {
+          opacity: 1;
+          transition: .5s; }
+  #createUpdateAdvertPage form .contBlockImages .contOthersImages ul {
+    list-style: none;
+    padding: 0;
+    text-align: center; }
+    #createUpdateAdvertPage form .contBlockImages .contOthersImages ul li {
+      display: inline-table;
+      width: 25%; }
+      #createUpdateAdvertPage form .contBlockImages .contOthersImages ul li .contImages small {
+        font-size: .75em !important; }
+      #createUpdateAdvertPage form .contBlockImages .contOthersImages ul li .contImages img {
+        height: 100%; }
+  #createUpdateAdvertPage form .contBlockImages .contOthersImages input {
+    display: none; }
+
+/*# sourceMappingURL=products.css.map */

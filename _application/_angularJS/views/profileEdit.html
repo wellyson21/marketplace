@@ -1,0 +1,61 @@
+<section id="profilePage" class="col2-to29-xs edit">
+
+  <!--<button class="btn btn-link" id="btnBackPage" data-ng-click="backPage()"><i class="material-icons">arrow_back_ios</i>Back</button>-->
+  <button class="btn btn-link" id="btnBackPage" data-ng-click="backPage()"><i class="material-icons">arrow_back_ios</i><span>Back</span></button>
+
+  <div class="form">
+
+    <form class="profileForm col1-to30-xs">
+
+      <div class="form-group col1-to30-xs">
+        <input type="text" name="name" placeholder="Nome" value="{{ data.name }}"/>
+      </div>
+
+      <div class="form-group col1-to15-xs">
+        <input type="text" name="phone" placeholder="Telefone" value="{{ data.contacts.phone }}"/>
+      </div>
+
+      <div class="form-group col16-to30-xs">
+        <input type="text" name="country" placeholder="País" value="{{ data.address.country }}"/>
+      </div>
+
+      <div class="form-group col1-to15-xs">
+        <input type="text" name="state" placeholder="Estado" value="{{ data.address.state }}"/>
+      </div>
+
+      <div class="form-group col16-to30-xs">
+        <input type="text" name="postalCode"  placeholder="Código Postal" value="{{ data.address.postalCode }}"/>
+      </div>
+
+      <div class="form-group col1-to30-xs">
+        <input type="text" name="city" placeholder="Codade" value="{{ data.address.city }}"/>
+      </div>
+
+      <div class="form-group col1-to30-xs">
+        <input type="text" name="addressLine" placeholder="Endereço" value="{{ data.address.addressLine }}"/>
+      </div>
+
+      <div class="form-group col1-to10-xs">
+        <input type="text" name="currentPassword" placeholder="Senha Atual"/>
+      </div>
+
+      <div class="form-group col11-to20-xs">
+        <input type="text" name="newPassword" placeholder="Nova senha"/>
+      </div>
+
+      
+      <div class="form-group col21-to30-xs">
+        <input type="text" name="confirmNewPassword" placeholder="Comirmar Nova senha" />
+      </div>
+
+      <div class="alert success clearfix">Alterações salvas com sucesso.</div>
+      <div class="alert error clearfix">Falha ao Salvar Alterações.</div>
+
+      <input type="submit" value="Salvar"/>
+
+    </form>
+
+
+  </div>
+
+</section>

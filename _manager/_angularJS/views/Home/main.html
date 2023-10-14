@@ -1,0 +1,86 @@
+<section id="homePage" class="col2-to29-xs col1-to30-lg">
+  <div class="header col1-to30-xs col2-to29-lg">
+
+    <p><i class="fas fa-home"></i></p>
+
+    <button class="add" data-ng-click="addSlideImage($event)"><i  class="fas fa-plus-circle"></i><input type="file" class="ipfile hide"/></button>
+  </div>
+
+  <div class="content col1-to30-xs col2-to29-lg">
+
+
+    <!-- Block reserved to SlideShow -->
+    <section id="slideMain" class="col1-to30-xs">
+      <article class="contSlide">
+        <div class="slideControllers">
+          <button class="fa fa-chevron-left prev"></button>
+          <button class="fa fa-chevron-right next"></button>
+
+          <div class="controllers">
+            <span class="fa fa-play-circle-o play"></span>
+            <span class="circles"></span>
+            <span class="fa fa-stop-circle-o stop"></span>
+          </div>
+        </div>
+        <ul class="contElemSlide clearfix">
+          <li data-ng-repeat="img in data.slideImages">
+            <button data-ng-click="choseSlideImage($event,$index)">
+              <i class="material-icons">edit</i>
+
+              <input type="file" class="ipfile hide"/>
+            </button>
+            <button class="remove" data-ng-click="removeSlideImage($index)">
+              <i class="material-icons">close</i>
+            </button>
+            <img class="mainImage" src="{{ img }}">
+          </li>
+        </ul>
+      </article>
+
+    </section>
+
+    <form id="homeForm">
+
+      <div class="box">
+
+        <h6>Blocos de Informações</h6>
+
+        <div class="image-cont clearfix" data-ng-click="choiceBlocksImage($event,1)">
+          <img src="{{ data.whatDoing.firstBlock.image }}" />
+          <input type="file" accept="image/*" class="ipfile hide"/>
+        </div>
+
+        <p>Titulo</p>
+        <input name="firstBlockTitle" type="text" class="form-control" value="{{ data.whatDoing.firstBlock.title }}"/>
+
+        <p>Descrição</p>
+        <textarea name="firstBlockDescription" class="form-control">{{ data.whatDoing.firstBlock.text }}</textarea>
+      </div>
+
+      <div class="box">
+
+        <div class="image-cont clearfix" data-ng-click="choiceBlocksImage($event,2)">
+          <img src="{{ data.whatDoing.secondBlock.image }}" />
+          <input type="file" accept="image/*" class="ipfile hide"/>
+        </div>
+
+        <p>Titulo</p>
+        <input name="secondBlockTitle" type="text" class="form-control" value="{{ data.whatDoing.secondBlock.title }}"/>
+
+        <p>Descrição</p>
+        <textarea name="secondBlockDescription" class="form-control">{{ data.whatDoing.secondBlock.text }}</textarea>
+      </div>
+
+      <div class="alert alert-danger hide" style="display: none">
+        Erro ao salvar as alterações.
+      </div>
+
+      <div class="alert alert-success" style="display: none">
+        As alterações foram salvas com successo.
+      </div>
+
+      <input type="submit" value="Salvar"/>
+    </form>
+
+  </div>
+</section>

@@ -1,0 +1,84 @@
+$primaryColor: rgb(55,51,102);
+$secondaryColor: rgb(120,196,237);
+$tertiaryColor: white;
+
+
+#aboutPage{
+  .header{
+    border-bottom: 1px solid rgb(107, 175, 212);
+    margin: 20px 0;
+
+    p{
+
+      margin: 0;
+      float: left;
+      width: 50px;
+      height: 50px;
+      background: rgb(107, 175, 212);
+      display: table;
+
+      i{
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 1.5em;
+        color: white;
+      }
+    }
+    .addAdvert{
+      float: right;
+      margin-top: 15px;
+      background: transparent;
+      border: 1px solid transparent;
+      i{
+
+        color: green;
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+    }
+
+  }
+
+  h6{
+    font: 400 1.8em "Tahoma";
+    text-align: center;
+    color: grey;
+    margin-bottom: 30px;
+  }
+
+  p{
+    font: 300 1em "Arial";
+    color: #a4a4a4;
+    margin-bottom: 8px;
+    div{
+
+      font: 300 1.2em "Arial";
+      color: #a4a4a4;
+    }
+  }
+
+  textarea{
+    width: 100%;
+    border: 1px solid #cccccc;
+    height: 150px;
+    padding: 10px;
+    color: grey;
+  }
+  input[type=submit]{
+
+    padding: 10px 25px;
+    border: 1px solid transparent;
+    background: $secondaryColor;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 15px;
+
+    &:hover{
+
+      transition: 0.3s;
+      background: #63a1c3;
+    }
+  }
+}

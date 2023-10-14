@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>{{ pageTitle }}</title>
+
+    {%autoescape 'html'%}
+    {{ components.configs_head | raw }}
+    {%endautoescape%}
+
+    {%autoescape 'html'%}
+    {{ components.default_files_css | raw }}
+    {%endautoescape%}
+
+    <link rel="stylesheet" href="{{ urls.appUrl }}_css/products.css"/>
+
+  </head>
+  <body>
+
+    <div class="main-wrapper">
+
+      <main class="main-panel">
+
+        {%autoescape 'html'%}
+          {{ components.header |raw }}
+        {%endautoescape%}
+
+
+        <section id="main-content">
+
+          <div class="loader">
+            <div class="table">
+              <div class="cell">
+                <i class="fas fa-spinner fa-pulse"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="filters-container col2-to29-xs col2-to10-lg col2-to7-vl">
+            <h5 class="filter-switch"><i class="fas fa-filter"></i>Filtros</h5>
+
+            <div class="wrapper">
+              <h5><i class="fas fa-filter"></i>Filtros</h5>
+              <form class="filterForm">
+
+                <div class="box first categories">
+                  <h6>Categorias</h6>
+                  <div class="per-input">
+                    <input id="cat_-1" type="radio" name="category" value="all" checked>
+                    <label for="cat_-1">Todas</label>
+                    {%for categoryName in categories["data"]%}
+                    <div></div>
+                    <input id="cat_{{ loop.index }}" type="radio" name="category" value="{{ categoryName }}">
+                    <label for="cat_{{ loop.index }}">{{ categoryName }}</label>
+                    {%endfor%}
+                  </div>
+                </div>
+
+                <div class="box">
+                  <h6>País</h6>
+                  <div class="select-container">
+                    <select name="country" class="countries">
+                      <option value="all">Todos</option>
+                      <option>Brazil</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="box">
+                  <h6>Estado</h6>
+                  <div class="select-container">
+                    <select name="state" class="states">
+                      <option value="all">Todos</option>
+                    </select>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <article class="products-container col2-to29-xs col11-to29-lg col8-to29-vl">
+
+            <div class="wrapper content-wrapper"></div>
+
+            <div class="col1-to30-xs pagination-box bottom">
+              <div class="wrapper">
+                <ul class="pagination-container clearfix"> </ul>
+              </div>
+            </div>
+
+
+          </article>
+
+        </section>
+
+        {%autoescape 'html'%}
+        {{ components.footer |raw }}
+        {%endautoescape%}
+
+      </main>
+
+    </div>
+
+    {%autoescape 'html'%}
+      {{ components.default_files_javascript |raw }}
+    {%endautoescape%}
+
+    <script>
+
+      $$(function(){
+
+        resetSideFilter();
+
+        /*** utilities ***/
+        function resetSideFilter(){
+
+          $$(".filterForm .box").map(function(k,v){
+
+            if($$(v).find("input[type=radio]").length){
+
+              if($$(v).find(".per-input .Essential-input-per").length > 0){
+
+                $$(v).find(".per-input .Essential-input-per").trigger("click");
+              }
+            }
+
+            if($$(v).find("select").length){
+
+              $$(v).find("select")[0].selectedIndex = 0;
+            }
+          });
+        }
+
+        $$(".filter-switch").click(function(){
+          $$(".filters-container .wrapper").fadeToggle();
+        });
+
+        /*** Generate Pagination Links ****/
+        function generateLinks(data,pars,a){
+
+          $$('.pagination-box .pagination-container').map(function(k,ul){
+
+            let li = '<li class="prev"><a href="#" aria-label="Previous"><span aria-hidden="true" data-translate="false">&laquo;</span></a></li>',j = 0;
+            let length = $$(data[2]).length;
+
+            for(let i=1, j = 0;i <= length;i++,j++){
+                if(pars && $$(pars).length){
+
+                  li+='<li><a data-translate="false" href="'+urls.baseUrl+'getProducts/?offset='+$$(data[2])[j];
+                  let filters = '';
+                  $$(pars).map(function(k,v){filters += '&'+k + '=' + v;});
+                  li += filters+='">'+i+'</a></li>';
+
+                }else{
+
+                  li+='<li><a href="'+urls.baseUrl+'getProducts/?offset='+$$(data[2])[j]+'">'+i+'</a></li>';
+                }
+              }
+
+            li+='<li class="next"><a href="#" aria-label="Next"> <span aria-hidden="true" data-translate="false">&raquo;</span> </a></li>';
+
+            if(length <= 1){
+
+              $$(ul).addClass("hide");
+            }else{
+
+              $$(ul).removeClass("hide");
+            }
+
+            $$(ul).html(li);
+          });
+        }
+
+        /*** Setup Pagination ***/
+        let currentPageIndex = -1;
+        function setPagination(container,isSearch = false) {
+
+          let paginationContainer = container ? container : $$(".pagination-box .pagination-container");
+
+          $$(paginationContainer).map(function (k, v) {
+
+            (function(k,v){
+              let ul = $$(v);
+
+              Utilities.pagination({
+                prev: ul.find(".prev"),
+                next: ul.find(".next"),
+                contLi: ul.find("li"),
+                source: "php",
+
+                show: 3,
+                active: "activePage",
+                desActive: "disabledPage",
+                beforeSend: function () {
+
+                  $$(".loader").removeClass("hide");
+                },
+                success: function(li,data,isFirstLoaded){
+
+                  let index = parseInt($$(li).attr("data-index"),10);
+                  if(index !== currentPageIndex || isSearch){
+
+                    if(k === 0 && paginationContainer[1]){
+
+                      $$($$(paginationContainer[1]).find("li").not(".prev").not(".next")[index]).attr('data-request',false).trigger("click");
+                    }else{
+
+                      $$($$(paginationContainer[0]).find("li").not(".prev").not(".next")[index]).attr('data-request',false).trigger("click");
+                    }
+
+                    currentPageIndex = index;
+                    mountContent(data, $$(li).attr("data-index"),isFirstLoaded);
+                  }else{
+
+                    $$(".loader").addClass("hide");
+                  }
+                },
+                complete: function (li, isFirstLoad) {
+
+                  if (!isFirstLoad) {
+
+                  }
+                }
+              });
+            }(k,v));
+
+          });
+        }
+
+        /*** Mount content HTML ***/
+        function mountContent(data,index,isFirstLoaded){
+
+          let html = "";
+          let count = 0;
+          let lastIndex = $$(data.data).length - 1;
+
+          if(lastIndex < 0){
+
+            html +='<div class="no-products col1-to30-xs"><i class="fas fa-cubes"></i> <p>Não há produtos no momento</p></div>';
+          }
+
+          $$(data.data).map(function(index,ad){
+
+            if(count === 0){
+
+              html += '<div class="row-container">';
+            }
+
+            html += '<div class="ad">'+
+                      '<div class="wrapper">'+
+                        '<div class="imgAnuncio">'+
+                          '<a href="'+urls.baseUrl+'products/'+ad['id']+'/"/><img src="'+ad['thumbnail']+'"/></a>'+
+                        '</div>'+
+                        '<div class="dataAnuncio">'+
+                            '<a href="'+urls.baseUrl+'products/'+ad['id']+'/"><h3 class="title">'+ad['name']+'</h3></a>'+
+                          '<h4 class="location" data-translate="false">'+ad['city']+' - <span class="state" data-translate="false">' + ad['state'] + '</span></h4>'+
+                          '<h3 class="price" data-translate="false">R$'+ Utilities.priceFormat(ad['price']) +'</h3>'+
+                          '<a href="'+urls.baseUrl+'products/'+ad["id"]+'/" class="more-details"><button>Mais Detalhes</button></a>'+
+                        '</div>'+
+                      '</div>'+
+                    '</div>';
+
+            if(count === 2){
+
+              html += '</div>';
+              count = 0;
+            }else if(lastIndex === index){
+              html += '</div>';
+              count = 0;
+            }else{
+
+              count++;
+            }
+          });
+
+          $$(".products-container .content-wrapper").html(html);
+          $$(".loader").addClass("hide");
+        }
+
+        /*** Search Products ***/
+        function fetchAndSetupProducts(data){
+
+          $$.ajax({
+            url: urls.baseUrl + "getProducts/",
+            data: data,
+            type: "post",
+            success: function(r){
+
+              let offsetData = JSON.parse(r)["paginationInfo"];
+
+              generateLinks([0,0,offsetData],data);
+
+              if(offsetData.length > 0){
+
+                setPagination(null, true);
+              }else{
+
+                mountContent([]);
+              }
+
+            }
+          });
+        }
+
+        // $$(".search-box").find('input[type=text]').val("");
+        $$("#header .search-box").submit(function(evt){
+          evt.preventDefault();
+
+          fetchAndSetupProducts({name: $$(this).serialize().name,isSearch: true});
+          $$(".filterForm input[type=radio]").off("change",handlerInputsSideFiler);
+          resetSideFilter();
+          $$(".filterForm input[type=radio]").on("change",handlerInputsSideFiler);
+        });
+
+        /*** Side Filters ***/
+        $$(".filterForm .states,.filterForm .categories input[type=radio]").on("change",handlerInputsSideFiler);
+
+        function handlerInputsSideFiler(){
+
+          fetchAndSetupProducts($$(".filterForm").serialize());
+        }
+
+        $$.settingInput($$(".filterForm .per-input-types"));
+
+        /*** countries and cities ***/
+        (function(){
+          let countries_data = {
+            brazil: ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"]
+          };
+
+          $$(".filterForm .countries").change(function(){
+
+            handlerInputsSideFiler();
+
+            let country = $$(this).val().toLowerCase();
+
+            $$(".filterForm .states").childs().map(function(k,v){ if(k > 0){ $$(v).remove(); } });
+
+            if(countries_data[country]){
+              $$(countries_data[country]).map(function(k,v){
+                let input = $$("<option>",{ innerHTML: v });
+                $$(input).append($$(".filterForm .states"));
+              });
+            }
+          });
+
+        }());
+
+        /*** Start Data ***/
+        (function(){
+          let queryParams = window.location.search.split("?");
+
+          if(queryParams.length > 1){
+
+            queryParams = queryParams[1].split("&");
+            let obj = {};
+            $$(queryParams).map(function(k,v){
+              let pair = v.split("=");
+              obj[pair[0].trim()] = pair[1] ? pair[1].trim() : "";
+            });
+
+            obj.name = obj.name ? obj.name : "";
+            let category = obj.category;
+
+            if(category){
+
+              category = decodeURIComponent(category);
+
+              $$(".categories .per-input input[type=radio]").optionIsEqual(category,function(index,option){
+
+                $$($$(".categories .per-input .Essential-input-per")[index]).trigger("click");
+
+                setTimeout(function(){
+                  $$.ajax({
+                    url: urls.baseUrl + "getProducts/",
+                    data: $$(".filterForm").serialize(),
+                    type: "post",
+                    success: function(r){
+
+                      let offsetData = JSON.parse(r)["paginationInfo"];
+                      let data = $$(".filterForm").serialize();
+
+                      generateLinks([0,0,offsetData],data);
+
+                      if(offsetData.length > 0){
+                        setPagination();
+                      }else{
+
+                        mountContent([]);
+                      }
+                    }
+                });
+                },300);
+              });
+
+            }else{
+
+              fetchAndSetupProducts({name: decodeURIComponent(obj.name),isSearch: true});
+              $$(".filterForm input[type=radio]").off("change",handlerInputsSideFiler);
+              resetSideFilter();
+              $$(".filterForm input[type=radio]").on("change",handlerInputsSideFiler);
+            }
+
+            
+          }else{
+
+            $$.ajax({
+              url: urls.baseUrl + "getProducts/",
+              data: $$(".filterForm").serialize(),
+              type: "post",
+              success: function(r){
+
+                let offsetData = JSON.parse(r)["paginationInfo"];
+                let data = $$(".filterForm").serialize();
+
+                generateLinks([0,0,offsetData],data);
+
+                if(offsetData.length > 0){
+                  setPagination();
+                }else{
+
+                  mountContent([]);
+                }
+              }
+            });
+          }
+        }());
+
+      });
+    </script>
+
+  </body>
+</html>

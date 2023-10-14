@@ -1,0 +1,200 @@
+$primaryColor: rgb(55,51,102);
+$secondaryColor: rgb(120,196,237);
+$tertiaryColor: white;
+
+#proposalPage {
+
+  .header {
+    background: rgba(105, 172, 208, 0.47);
+    margin-bottom: 20px;
+    ul {
+      list-style: none;
+      display: table;
+      margin: auto;
+      padding: 10px;
+      li {
+        float: left;
+        padding: 10px 20px;
+        border: 1px solid rgb(116, 186, 225) !important;
+        color: #6e6e6e;
+        cursor: pointer;
+
+        &:first-child {
+          margin-right: 1px;
+        }
+      }
+    }
+  }
+
+  .content{
+
+    .no-data{
+      margin-top: 30px;
+      opacity: 0;
+      p{
+        text-align: center;
+        i{
+          display: block;
+          font-size: 2.5em;
+          color: #747474;
+        }
+        span{
+          margin-top: 5px;
+          display: block;
+          font: 400 0.95em "Tahoma";
+          color: gray;
+        }
+      }
+    }
+
+    ul{
+
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: block;
+      width: 100%;
+      li{
+
+        width: 100%;
+        padding: 10px;
+        display: block;
+        box-shadow: 0 0 5px lightgrey;
+        margin-top: 10px;
+
+        &:first-child{
+
+          margin-top: 0;
+        }
+
+
+        img{
+
+          width: 105px;
+          height: 105px;
+          border-radius: 100%;
+          float: left;
+        }
+
+        .right-info{
+          float: left;
+          margin-left: 10px;
+        }
+
+        .top-info{
+
+          position: relative;
+
+          .name{
+
+            margin-top: 10px;
+            font: 400 1.2em "Tahoma";
+            color: gray;
+          }
+
+          .price{
+
+            font: 400 0.9em "Tahoma";
+            color: #c69e2f;
+            margin-top: 0!important;
+            margin-bottom: 0!important;
+          }
+
+          .priceLabel{
+
+            font: 400 0.8em "Tahoma";
+            color: #a3605a;
+            margin-bottom: 0!important;
+            margin-top: 0!important;
+          }
+
+          .date,.category{
+
+            font: 400 0.7em "Tahoma";
+            color: #a3605a;
+            margin-top: 0;
+            display: block;
+          }
+
+          .category{
+
+            margin-top: -18px
+          }
+          .date{
+
+            // margin-bottom: 5px;
+          }
+
+          i{
+            position: absolute;
+            top: 45px;
+            right: 10px;
+            color: $secondaryColor;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover{
+
+              transition: 0.3s;
+              color: #62a2c3;
+            }
+
+
+            &.fa-times-circle{
+
+              color: #ff6466;
+              right: 38px;
+            }
+          }
+        }
+
+        .bottom-info{
+
+          border-top: 1px solid rgba(218, 218, 218, 0.86);
+          margin-top: 10px;
+          margin-bottom: 0;
+          padding: 0;
+          display: none;
+          clear: both;
+
+          p{
+            text-align: center;
+            font: 400 1.2em "Tahoma";
+            color: gray;
+            margin: 10px 0;
+          }
+
+          .wrapper{
+
+            display: table;
+            margin: auto;
+            padding: 0;
+            height: 150px;
+
+            img{
+
+              float: none;
+              display: table;
+              margin: auto;
+            }
+
+            .right-info{
+
+              margin-top: 10px;
+              float: none;
+            }
+
+            p{
+
+              margin: 0;
+              font: 300 0.85em "Tahoma";
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+}

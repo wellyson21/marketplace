@@ -1,0 +1,109 @@
+$primaryColor: rgb(55,51,102);
+$secondaryColor: rgb(120,196,237);
+$tertiaryColor: white;
+
+#contactsPage {
+  .header {
+    position: absolute;
+    left: -10px;
+    top: -20px;
+
+    p {
+
+      margin: 0;
+      float: left;
+      width: 70px;
+      height: 70px;
+      background: rgb(107, 175, 212);
+      display: table;
+
+      i {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 1.5em;
+        color: white;
+      }
+    }
+
+
+    span{
+
+      display: block;
+      margin-top: 35px;
+      margin-left: 10px;
+      float: left;
+
+      font: 400 1.5em "Arial";
+      //font-weight: bolder;
+      //font-size: 17px;
+      color: #9b9b9b;
+      //color: grey;
+
+    }
+
+    //.addAdvert {
+    //  float: right;
+    //  margin-top: 15px;
+    //  background: transparent;
+    //  border: 1px solid transparent;
+    //  i {
+    //
+    //    color: green;
+    //    font-size: 1.5em;
+    //    cursor: pointer;
+    //  }
+    //}
+
+  }
+
+  .content{
+
+
+    form {
+
+
+      width: 100%;
+      padding: 60px 20px 20px 20px !important;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 3px 3px grey;
+      border: none !important;
+      //box-shadow: none !important;
+      position: relative;
+
+      .form-box {
+
+        padding: 0 5px;
+        //background: red;
+      }
+
+      h4 {
+
+        font: 400 1em "Arial";
+        margin-top: 40px;
+        //background: rgba(120, 196, 237, 0.7);
+        color: grey;
+        //color: white;
+        padding: 10px 10px;
+        border-left: 6px solid $primaryColor;
+      }
+
+      .box{
+        margin-top: 30px;
+        //box-shadow: 0 0 1px grey;
+        padding-bottom: 10px;
+
+        &:first-child{
+
+          margin-top: 0;
+        }
+      }
+
+      Button {
+
+        background-color: #858585;
+        box-shadow: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+
+.EssentialJS_wrap{
+    display: block;
+    padding: 0;
+    position: relative;
+}
+
+.EssentialJS_container_scroll{
+    position: absolute;
+    border: 1px solid rgba(208, 185, 209, 0.67);
+    border-radius: 5px;
+    z-index: 1;
+    display: block;
+    overflow: hidden;
+    margin-right: 2px;
+}
+
+.EssentialJS_container_scroll.y{
+    top: 3%;
+    right: 0;
+    width: 10px;
+    height: 94%;
+}
+
+.EssentialJS_container_scroll.x{
+    bottom: 3px;
+    left: 3%;
+    width: 90%;
+    height: 10px;
+}
+
+.EssentialJS_container_scroll .EssentialJS_scroll_bar{
+    display: block;
+    position: relative;
+    border-radius: 5px;
+    background: darkgrey;
+    transition: 0.1s;
+}
+
+.EssentialJS_container_scroll.y .EssentialJS_scroll_bar{
+    width: 100%;
+    height: auto;
+}
+
+.EssentialJS_container_scroll.x .EssentialJS_scroll_bar{
+    height: 100% !important;
+    width: 20px;
+}
+
+.Essential_element_default_style{
+    padding: 5px;
+    overflow-x: hidden;
+    display: block;
+    position: relative;
+}

@@ -1,0 +1,74 @@
+<section id="newsletterPage" class="col2-to29-xs col1-to30-lg">
+
+  <!--<div class="header col1-to30-xs col2-to29-lg">-->
+
+    <!--<p><i class="fas fa-id-card"></i></p>-->
+  <!--</div>-->
+
+  <div class="content col2-to29-xs col2-to29-lg">
+
+    <form id="newsletterForm" class="clearfix">
+
+
+      <div class="header col1-to30-xs col2-to29-lg">
+
+        <p><i class="far fa-newspaper"></i></p>
+        <span>Envie Noticías e novidades para seus usuários</span>
+      </div>
+
+      <div class="box">
+        <!--<h4 style="margin: -10px 0 10px;">Assunto</h4>-->
+
+        <div class="col1-to30-xs form-box">
+          <label>Assunto</label>
+          <input type="text" class="form-control" name="subject" spellcheck="false" required/>
+        </div>
+
+        <div class="col1-to30-xs">
+          <div class="form-group">
+            <label>Mensagem<br/><small></small></label>
+            <div style="border: 1px solid #d0d0d0; border-radius: 5px; padding: 5px; background-color: #fff; margin-bottom: 10px;">
+              <div id="textEditorToolBar">
+                <div style="display: inline-table; margin-right: 8px;">
+                  <button id="etbBold" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-bold"></i></button>
+                  <button id="etbItalic" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-italic"></i></button>
+                  <button id="etbUnderline" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-underline"></i></button>
+                </div>
+                <div style="display: inline-table; margin-right: 8px;">
+                  <button id="etbTextAlignLeft" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-align-left"></i></button>
+                  <button id="etbTextAlignCenter" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-align-center"></i></button>
+                </div>
+                <div style="display: inline-table; margin-right: 8px;">
+                  <button id="etbListUl" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-list-ul"></i></button>
+                </div>
+                <div style="display: inline-table; margin-right: 8px;">
+                  <button id="etbLink" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-link"></i></button>
+                  <button id="etbUnlink" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-unlink"></i></button>
+                </div>
+                <div style="display: inline-table; margin-right: 8px;">
+                  <button id="etbUndo" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-undo"></i></button>
+                  <button id="etbRedo" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-redo"></i></button>
+                </div>
+              </div>
+              <div id="textEditor" contenteditable="true" style="overflow: auto; display: block; width: 100%; height: 200px; background-color: rgba(240,240,240,0.4); padding: 5px 10px;"></div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="alert alert-success" style="display: none">
+        Messagem Enviada com sucesso.
+      </div>
+
+      <div class="alert alert-danger" style="display: none">
+        Falha ao enviar menssagem. Por favor tente novamente.
+      </div>
+
+      <button type="submit" class="btn btn-default" style="margin-top: 10px;">Enviar</button>
+    </form>
+
+  </div>
+
+</section>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>{{ pageTitle }}</title>
+
+    {%autoescape 'html'%}
+    {{ components.configs_head | raw }}
+    {%endautoescape%}
+
+    {%autoescape 'html'%}
+    {{ components.default_files_css | raw }}
+    {%endautoescape%}
+
+    <link rel="stylesheet" href="{{ urls.appUrl }}_css/account.css"/>
+
+  </head>
+  <body>
+
+    <div class="main-wrapper">
+
+      <main class="main-panel">
+
+        {%autoescape 'html'%}
+          {{ components.header |raw }}
+        {%endautoescape%}
+
+
+        <section id="main-content">
+
+          <aside class="side-menu col2-to29-xs col2-to9-lg col2-to7-vb">
+            <ul>
+              <li data-link="#!"><a href="{{ urls.baseUrl }}account/#!/proposal"><i class="far fa-list-alt"></i> Propostas</a></li>
+              <li data-link="adverts"><a href="{{ urls.baseUrl }}account/#!/adverts"><i class="fas fa-ad"></i> Anúncios</a></li>
+              <li data-link="profile"><a href="{{ urls.baseUrl }}account/#!/profile"><i class="far fa-user"></i> Perfil</a></li>
+            </ul>
+          </aside>
+
+          <section class="content col1-to30-xs col10-to30-lg col8-to30-vb" data-ng-app="accountApp">
+            <div class="wrapper" data-ng-view>
+
+            </div>
+          </section>
+
+        </section>
+
+        {%autoescape 'html'%}
+        {{ components.footer |raw }}
+        {%endautoescape%}
+
+      </main>
+
+    </div>
+
+    {%autoescape 'html'%}
+      {{ components.default_files_javascript |raw }}
+    {%endautoescape%}
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+
+    <script src="{{urls.systemUrl}}_js/angular.min.js"></script>
+    <script src="{{urls.systemUrl}}_js/angular-route.min.js"></script>
+    <script src="{{ urls.systemUrl }}_js/angular-sanitize.min.js"></script>
+    <script src="{{urls.appUrl}}_angularJS/scripts/accountRoute.js"></script>
+    <script src="{{urls.appUrl}}_angularJS/scripts/accountController.js"></script>
+
+
+    <script>
+
+
+      $$(function(){
+
+        (function setupSideMenuHeight(){
+
+          /**$$(".side-menu").css("min-height",$$(".side-menu").css("height"));
+          $$(".side-menu").css("height",$$("#main-content").css("height") + 1);
+
+          let elemento = $$("#main-content");
+          let onResize = function() {
+
+            let h = elemento[0].offsetHeight;
+
+            $$(".side-menu").css("min-height",$$("#main-content").css("height") + 1);
+          };
+
+          let data = {
+            height: elemento[0].height,
+            width: elemento[0].width
+          };
+
+          let interval = setInterval(function() {
+            if (data.width !== elemento[0].offsetWidth || data.height !== elemento[0].offsetHeight) {
+              onResize();
+              data = {
+                width: elemento[0].offsetWidth,
+                height: elemento[0].offsetHeight,
+              };
+              // clearInterval(interval);
+            }
+          }, 0);***/
+        }());
+
+
+        setTimeout(function(){
+
+          Utilities.activeButton({
+            elements: $$(".side-menu ul li"),
+            active: "activeSideMenuPage",
+            modeUrl: true
+          });
+        },500);
+
+      });
+    </script>
+
+  </body>
+</html>

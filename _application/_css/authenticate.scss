@@ -1,0 +1,182 @@
+// $primaryColor: rgb(55,51,102);
+// $secondaryColor: rgb(120,196,237);
+// $tertiaryColor: white;
+$primaryColor: white;
+$secondaryColor: rgb(120,196,237);
+$tertiaryColor: rgb(55,51,102);
+$quantenaryColor: rgb(123, 123, 128);
+
+#login{
+
+  article{
+
+    margin: 30px 0;
+    background-size: 100% 100%;
+    position: relative;
+
+    .alert{
+
+      display: none;
+      margin-top: 5px;
+    }
+
+    .main-table{
+      display: table;
+      width: 100%;
+      height: 400px;
+
+      .main-cell{
+
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+
+
+    .box{
+
+      padding: 10px 10px 30px 10px;
+      margin-top: 10px;
+
+      &.registerBox,&.forgotPasswordBox{
+
+        display: none;
+      }
+
+      &.forgotPasswordBox,&.registerBox{
+
+        min-height: 200px;
+
+        .showLogin{
+          width: auto;
+          display: inline;
+          margin: 0 10px 0 0 !important;
+          height: auto;
+          background: transparent;
+          color: #619ebf;
+          cursor: pointer;
+          &:hover{
+
+            transition: 0.5s;
+            background: transparent;
+            color: $secondaryColor;
+          }
+        }
+      }
+
+      .table{
+
+        border: 1px solid transparent;
+        display: table;
+        margin: auto;
+        .cell{
+
+          vertical-align: middle;
+          display: table-cell;
+
+          form{
+
+            display: table;
+            margin: 0 auto;
+            width: 70%;
+
+            input{
+
+              width: 100%;
+              display: block;
+              height: 35px;
+              margin-top: 5px;
+              border: 1px solid lightgrey;
+              color: #9b9b9b;
+              padding: 5px;
+              &[type=submit]{
+
+                padding: auto;
+                cursor: pointer;
+                background: $secondaryColor;
+                border: 1px solid transparent;
+                color: white;
+                transition: 0.5s;
+                &:hover{
+
+                  transition: 0.5s;
+                  background: $tertiaryColor;
+                }
+              }
+            }
+
+            .showForgotPassWord{
+              color: #9b9b9b;
+              text-align: right;
+              width: 100%;
+              margin-top: 5px;
+              font: 400 14px "Tahoma";
+              transition: 0.3s;
+            }
+          }
+
+        }
+      }
+
+      .bottom-box{
+
+        margin-top: 30px;
+      }
+
+      h5,h6{
+        text-align: center;
+        margin-bottom: 15px;
+        font: 400 16px "Tahoma";
+        color: $quantenaryColor;
+      }
+
+      h5{
+        margin-top: 0;
+        font-size: 25px;
+        i{
+          margin-right: 10px;
+          cursor: pointer;
+          &:hover{
+
+            color: $secondaryColor;
+          }
+        }
+      }
+
+      p{
+        text-align: center;
+        font: 400 14px "Tahoma";
+        margin-bottom: 10px;
+        color: $quantenaryColor;
+      }
+
+      .showRegister,.showLogin{
+        width: 40%;
+        display: table;
+        margin: 0 auto !important;
+        height: 35px;
+        background: $secondaryColor;
+        color: white;
+        cursor: pointer;
+        &:hover{
+
+          transition: 0.5s;
+          background: $tertiaryColor;
+        }
+      }
+
+      a{
+
+        display: table;
+        width: 50%;
+        margin: auto;
+        text-decoration: none;
+      }
+    }
+
+  }
+}
+
+#register{
+
+}

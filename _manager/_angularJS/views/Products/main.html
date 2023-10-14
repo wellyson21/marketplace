@@ -1,0 +1,73 @@
+<section id="advertsPage" class="col2-to29-xs col1-to30-lg">
+
+  <div class="header col1-to30-xs col2-to29-lg">
+
+    <p><i class="fab fa-adversal"></i></p>
+
+    <button class="addAdvert" data-ng-click="addAdvert()"><i  class="fas fa-plus-circle"></i></button>
+  </div>
+
+  <div class="switch col1-to30-xs col2-to29-lg">
+    <ul>
+      <li data-tabIndex="0">Postados</li>
+      <li data-tabIndex="1">Em revisão</li>
+    </ul>
+  </div>
+
+  <div class="content col1-to30-xs col2-to29-lg">
+
+    <!--<div class="loader">-->
+      <!--<div class="table">-->
+        <!--<div class="cell">-->
+          <!--<i class="fas fa-spinner fa-pulse"></i>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+
+    <div class="no-data " data-ng-show="adverts.length == 0">
+      <p><i class="fas fa-ad"></i> <span>Não há Anúncios no momento.</span></p>
+    </div>
+
+    <ul>
+      <li data-ng-repeat="advert in adverts" data-ng-click="viewAdvert(advert)">
+        <div class="top-info clearfix">
+          <img src="{{ advert.thumbnail }}"/>
+
+          <div class="right-info">
+            <p class="name">{{ advert.name }}</p>
+            <span class="date">{{ advert.date.toDate().toLocaleDateString() }}</span>
+            <p class="price">R${{ advert.price }}</p>
+          </div>
+
+          <i class="fas fa-times-circle" title="Remover" data-ng-if="tabIndex === 0" data-ng-click="removeAdvert($event, $index, advert.id)"></i>
+          <i class="fas fa-edit" title="Editar" data-ng-if="tabIndex === 0" data-ng-click="editAdvert($event,advert)"></i>
+
+          <i class="fas fa-times-circle" title="Rejeitar Anúncio" data-ng-if="tabIndex === 1" data-ng-click="refuseAdvert($event, $index, advert.id)"></i>
+          <i class="fas fa-check" title="Aprovar Anúncio" data-ng-if="tabIndex === 1" data-ng-click="acceptAdvert($event, $index , advert.id)"></i>
+        </div>
+      </li>
+
+    </ul>
+
+
+    <div class="pagination-box" ng-show="hasPaginationLinks">
+      <ul class="pagination-container clearfix">
+        <li class="prev">
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li ng-repeat="data in paginationLinks" data-documentId="{{ $index }}"><a href="#">{{ $index + 1 }}</a></li>
+        <li class="next">
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+
+</section>

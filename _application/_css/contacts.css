@@ -1,0 +1,67 @@
+#main-content .map {
+  height: 400px;
+  margin-top: 30px;
+  border: 1px solid transparent; }
+#main-content .box {
+  position: relative;
+  padding: 30px 10px; }
+  #main-content .box input {
+    width: 100%;
+    display: block;
+    height: 35px;
+    margin-top: 10px;
+    border: 1px solid #a6a6a6;
+    padding: 5px; }
+    #main-content .box input:first-child {
+      margin-top: 0; }
+  #main-content .box textarea {
+    width: 100%;
+    height: 125px;
+    resize: none;
+    padding: 5px;
+    border: 1px solid #a6a6a6; }
+  #main-content .box .alert {
+    display: none; }
+  #main-content .box .sendMessageBtn {
+    padding: 10px 15px;
+    float: right;
+    margin-top: 10px;
+    cursor: pointer;
+    color: white;
+    background: #78c4ed;
+    box-shadow: 0 0 2px gray;
+    transition: 0.5s; }
+    #main-content .box .sendMessageBtn:hover {
+      transition: 0.5s;
+      background: #373366;
+      color: #f3f3f3; }
+  #main-content .box ul {
+    list-style: none; }
+    #main-content .box ul li {
+      position: relative;
+      margin-top: 10px; }
+      #main-content .box ul li:first-child {
+        margin-top: 0; }
+      #main-content .box ul li i {
+        position: absolute;
+        top: 5px;
+        left: 0; }
+      #main-content .box ul li .fa-address-card {
+        color: olive; }
+      #main-content .box ul li .fa-envelope {
+        color: orange; }
+      #main-content .box ul li .fa-phone {
+        color: cornflowerblue; }
+      #main-content .box ul li div {
+        margin-left: 30px;
+        color: #8c8c8c; }
+        #main-content .box ul li div p {
+          font: 400 15px "Tahoma"; }
+        #main-content .box ul li div small {
+          font: 400 12px "Tahoma"; }
+
+@media (min-width: 0) and (max-width: 768px) {
+  .map {
+    height: 300px !important; } }
+
+/*# sourceMappingURL=contacts.css.map */

@@ -1,0 +1,209 @@
+<header id="header" class="clearfix">
+
+  <div class="wrapper clearfix">
+
+    <div class="top-header-box clearfix">
+
+      <div class="box first col2-15-xs  col2-to9-lg">
+         <p><a href="mailto://{{ email }}"><i class="fas fa-envelope"></i><span>{{ email }}</span></a></p>
+      </div>
+
+
+      <div class="box second col16-29-xs col10-to20-lg">
+        <ul class="contacts">
+          <li><a href="tel://{{ phone }}" ><i class="fas fa-phone"></i><span>{{ phone }}</span></a></li>
+          <li><a href="https://api.whatsapp.com/send?phone={{ whatsapp }}" target="_blank"><i class="fab fa-whatsapp"></i><span>{{ whatsapp }}</span></a></li>
+        </ul>
+      </div>
+
+      <div class="box thirdy col16-29-xs col21-to29-lg">
+        <div class="cont-info-select">
+            <div class="cont-select-languages per-select" >
+                <select data-translate="false">
+                  <option value="pt">Portuguese</option>
+                  <option value="es">Spanish</option>
+                  <option value="en">English</option>
+                </select>
+            </div>
+        
+            <ul class="info">
+              {%if isLogged%}
+      
+              <li class="log-out" data-link=""><a title="Logout"><i class="fas fa-power-off"></i> Sair</a></li>
+              <li class="user" data-link="account"><a title="Acessar conta" href="{{urls.baseUrl}}account/"><i class="fas fa-user"></i> Minha conta</a></li>
+              {%else%}
+      
+              <li class="user" data-link="login"><a href="{{urls.baseUrl}}login/"><i class="fas fa-lock"></i> Realizar Login </a></li>
+              {%endif%}
+            </ul>
+          </div>
+      </div>
+  
+
+    </div>
+
+    <div class="content col2-to29-xs">
+      <div class="logo-container col1-to20-xs col1-to10-md col1-to7-lg col1-to6-vb">
+        <a href="{{ urls.baseUrl }}"><img src="{{ logo }}"></a>
+      </div>
+    
+      <div class="searchBox  col5-to26-xs col9-to14-lg col8-to12-vb">
+        <form class="col1-to30-xs search-box" method="get" action="{{ urls.baseUrl }}products/">
+          <input type="text" name="name" placeholder="Pesquise..."/>
+          <button class="search"><i class="fas fa-search "></i></button>
+        </form>
+      </div>
+
+      <div class="menu col1-to30-xs col1-to30-md col15-to30-lg col13-to30-vb">
+      <!--Overlay-->
+        <div class="menu-overlay hide"></div>
+
+        <!--DeskTop Menu-->
+        <ul class="menu-default-ul">
+
+          <li data-link="about"><a href="{{urls.baseUrl}}about/">Sobre</a></li>
+          <li data-link="contact"><a href="{{urls.baseUrl}}contact/">Contato</a></li>
+          <li data-link="products"><a href="{{urls.baseUrl}}products/">Produtos</a></li>
+          <li data-link="index"><a href="{{urls.baseUrl}}" data-translate="false">Home</a></li>
+        </ul>
+
+        <!--DeskTop Menu-->
+        <nav class="menu-mobile hide">
+
+          {%if isLogged%}
+          <div class="logged">
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+            <button class="log-out"><i class="fas fa-power-off"></i></button>
+            <img src="{{ userData.photo }}">
+            <h6>{{ userData.email }}</h6>
+          </div>
+          {%else%}
+          <div class="no-logged">
+
+            <a href="{{urls.baseUrl}}login/"><button><i class="fas fa-user-lock"></i></button></a>
+
+          </div>
+          {%endif%}
+
+          <ul class="menu-mobile-ul">
+            <li data-link="index"><a href="{{urls.baseUrl}}"><i class="fas fa-home"></i>Home</a></li>
+            <li data-link="products"><a href="{{urls.baseUrl}}products/"><i class="fas fa-clipboard-list"></i>Produtos</a></li>
+            {%if isLogged%}
+
+            <li data-link="account"><a href="{{urls.baseUrl}}account/"><i class="fas fa-user"></i>Conta</a></li>
+            {%endif%}
+            <li data-link="contact"><a href="{{urls.baseUrl}}contact/"><i class="fas fa-address-book"></i>Contatos</a></li>
+            <li data-link="about"><a href="{{urls.baseUrl}}about/"><i class="fas fa-info-circle"></i>Sobre</a></li>
+          </ul>
+        </nav>
+
+        <!--menu Button-->
+        <!-- <u class="menu-button-cont col25-to30-xs">
+            <ul class="hidden-lg hidden-vl hidden-vb">
+        </ul> -->
+
+      </div>
+
+      
+      <div class="menu-button-cont hidden-lg hidden-vl hidden-vb">
+
+          <button class="menu-button"><i class="fas fa-bars"></i></button>
+      </div>
+
+    </div>
+  </div>
+
+      
+  <section id="footer-advertise-your-product" class="col2-to29-xs">
+
+    <div class="col1-to30-xs col1-to15-lg box first">
+      <button>Seja um anúnciante</button>
+      <img src="{{ urls.appUrl }}_medias/_images/assets/anuncie.png" />
+    </div>
+    
+    <div class="col1-to30-xs col16-to30-lg box second">
+      <h6>Anúncie aqui seu equipamento</h6>
+      <li><a href="https://api.whatsapp.com/send?phone={{ whatsapp }}" target="_blank"><i class="fab fa-whatsapp"></i> <span> {{ whatsapp }}</span></a></li>
+    </div>
+  </section>
+
+  <!-- Set PageInfo -->
+  {%if pageInfo%}
+    <div class="page-info-container col1-to30-xs">
+      <div class="page-info col2-to29-xs col22-to29-lg">
+          <h6>{{ pageInfo.pageTitle }}</h6>
+          <ul>
+            {%for data in pageInfo.navigation%}
+            <li><a href="{{ data.url }}">{{data.name}}</a><span>{{data.bar}}</span></li>
+            {%endfor%}
+          </ul>
+        </div>
+    </div>
+    
+  {%endif%}
+
+  {%if slideImages[0] %}
+    <!-- Block reserved to SlideShow -->
+    <section id="homeProductsCategories" class="col2-to29-xs col2-to12-lg">
+      <div class="wrapper">
+        <h6>Procure Por Categoria</h6>
+        <ul>
+          <li>
+            <img src="{{ urls.appUrl }}_medias/_images/assets/categories/compressor0.png"/>
+            <a href="{{ urls.baseUrl }}products?category={{ categories['name'][0] }}">{{ categories['name'][0] }}<span>({{ categories['qty'][0] }})</span></a>
+          </li>
+          <li>
+            <img src="{{ urls.appUrl }}_medias/_images/assets/categories/condensador-evaporativo.png"/>
+            <a href="{{ urls.baseUrl }}products?category={{ categories['name'][1] }}">{{ categories['name'][1] }}<span>({{ categories['qty'][1] }})</span></a>
+          </li>
+          <li>
+            <img src="{{ urls.appUrl }}_medias/_images/assets/categories/evaporador.png"/>
+            <a href="{{ urls.baseUrl }}products?category={{ categories['name'][2] }}">{{ categories['name'][2] }}<span>({{ categories['qty'][2] }})</span></a>
+          </li>
+          <li>
+            <img src="{{ urls.appUrl }}_medias/_images/assets/categories/recipiente-de-liquido.png"/>
+            <a href="{{ urls.baseUrl }}products?category={{ categories['name'][3] }}">{{ categories['name'][3] }}<span>({{ categories['qty'][3] }})</span></a>
+          </li>
+          <li>
+            <img src="{{ urls.appUrl }}_medias/_images/assets/categories/motor-eletrico.png"/>
+            <a href="{{ urls.baseUrl }}products?category={{ categories['name'][4] }}">{{ categories['name'][4] }}<span>({{ categories['qty'][4] }})</span></a>
+          </li>
+          <li>
+            <img src="{{ urls.appUrl }}_medias/_images/assets/categories/geradora-de-gelo.png"/>
+            <a href="{{ urls.baseUrl }}products?category={{ categories['name'][5] }}">{{ categories['name'][5] }}<span>({{ categories['qty'][5] }})</span></a>
+          </li>
+          <li>
+              <img src="{{ urls.appUrl }}_medias/_images/assets/categories/outros.png"/>
+              <a href="{{ urls.baseUrl }}products?category={{ categories['name'][6] }}">{{ categories['name'][6] }}<span>({{ categories['qty'][6] }})</span></a>
+            </li>
+        </ul>
+
+        <div class="bottom-button">
+          <a></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="slideMain" class="col2-to29-xs col14-to29-lg">
+      <article class="contSlide col1-to30-xs">
+        <div class="slideControllers">
+          <button class="fa fa-chevron-left prev"></button>
+          <button class="fa fa-chevron-right next"></button>
+
+          <div class="controllers">
+            <span class="fa fa-play-circle-o play"></span>
+            <span class="circles"></span>
+            <span class="fa fa-stop-circle-o stop"></span>
+          </div>
+        </div>
+        <ul class="contElemSlide clearfix">
+          {%for img in slideImages%}
+            <li><img src="{{ img }}"></li>
+          {%endfor%}
+        </ul>
+      </article>
+
+    </section>
+  {%endif%}
+
+</header>

@@ -1,0 +1,14 @@
+{
+    "require": {
+        "twig/twig": "^1.28",
+        "linecorp/line-bot-sdk": "^2.1",
+        "paypal/rest-api-sdk-php": "*",
+        "angelleye/paypal-php-library": "^2.0",
+        "phpmailer/phpmailer": "^6.0",
+        "react/async": "^1.0",
+        "react/event-loop": "^0.4.3",
+        "kreait/firebase-php": "^4.20",
+        "google/cloud-firestore": "^1.6",
+        "google/cloud-storage": "^1.12"
+    }
+}

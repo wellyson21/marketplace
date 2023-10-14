@@ -1,0 +1,140 @@
+<div id="createUpdateAdvertPage" class="col2-to29-md">
+
+  <button class="btn btn-link" id="btnBackPage" data-ng-click="backPage()"><i class="material-icons">arrow_back_ios</i><span>Back</span></button>
+  <div class="card">
+
+    <div class="card-body">
+
+      <form id="formPromotion" autocomplete="off" enctype="multipart/form-data">
+
+        <input type="hidden" name="id" value="{{ advert.id }}"/>
+
+        <div class="row contBlockImages">
+          <div style="margin: 0 auto; text-align: center;">
+
+            <div style="display: inline-table; margin-bottom: 10px;">
+              <small>Thumbnail</small>
+              <div class="contImages contMainImage" data-ng-click="uploadMainImage()" style="width: 200px; height: 200px; border: 2px solid #ddd;">
+                <img src="{{ advert.thumbnail != undefined && advert.thumbnail ||  appUrl + '_medias/_images/assets/advert.png' }}" class="mainImage" />
+                <input type="file" class="iThumbnail inputMainImage" accept="image/jpeg, image/png" name="thumbnail" />
+              </div>
+            </div>
+
+            <div class="hidden-md" style="width: 90px; display: inline-table"></div>
+
+            <div style="width: 360px; margin: 0 auto; display: inline-table">
+              <small>Images</small>
+              <div class="contOthersImages">
+                <ul>
+                  <li data-ng-repeat="_ in [0,1,2,3,4,5]">
+                    <div class="contImages contSecondaryImages" data-ng-click="uploadSecondaryImages($index)" style="width: 100px; height: 100px; margin: 0 5px 4px 5px; border: 2px solid #ddd;">
+                      <img src="{{ advert.secondariesImages[$index] != undefined && advert.secondariesImages[$index] ||  appUrl + '_medias/_images/assets/advert.png' }}" class="secondaryImages{{ $index }}"/>
+                      <input type="file" class="iSecondaryImg inputSecondaryImages{{ $index }}" accept="image/jpeg,image/png" name="images" />
+                      <button type="button" class="removeImage" data-index="{{ $index }}" ng-if="advert.secondariesImages[$index] != undefined" data-ng-click="removeImage($event)">x</button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div>
+          <div class="col1-to30-xs form-group">
+            <input type="text" class="form-control" name="name" placeholder="Nome" value="{{ advert.name }}" required/>
+          </div>
+        </div>
+
+        <!--required-->
+        <div>
+          <div class="col1-to30-xs col1-to15-md form-group">
+            <select class="categories" name="category">
+              <option data-ng-repeat="categoryName in categories" value="{{ categoryName }}">{{ categoryName }}</option>
+            </select>
+          </div>
+
+          <div class="col1-to30-xs col16-to30-md form-group">
+            <input type="text" class="form-control pricefield" placeholder="Preço" name="price" value="{{ advert.price }}" required/>
+          </div>
+        </div>
+
+
+        <div>
+          <div class="col1-to30-xs col1-to15-md form-group">
+            <select class="countries" name="country">
+              <option value="others">Outros Países</option>
+              <option value="brazil">Brazil</option>
+            </select>
+          </div>
+          <div class="col1-to30-xs col16-to30-md form-group">
+
+            <select class="states" name="state">
+              <option value="others">Outros Estados</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="other-location hide">
+          <div class="col1-to30-xs col1-to15-md form-group">
+            <input type="text" class="form-control" name="otherCountry" placeholder="País" value="{{ advert.country }}" />
+          </div>
+          <div class="col1-to30-xs col16-to30-md form-group">
+            <input type="text" class="form-control" name="otherState" placeholder="Estado" value="{{ advert.state }}" />
+          </div>
+        </div>
+
+        <div>
+          <div class="col1-to30-xs form-group">
+            <input type="text" class="form-control" name="city" placeholder="Cidade" value="{{ advert.city }}" required/>
+          </div>
+        </div>
+
+        <!--<div class="col1-to30-xs form-group hide">-->
+
+          <!--<textarea placeholder="Descrição curta" name="shortDescription">{{ advert.productDescription.short }}</textarea>-->
+        <!--</div>-->
+
+        <div class="col1-to30-xs">
+          <div class="form-group">
+            <label>Descrição<br/><small>Entre com uma descrição para o anúncio.</small></label>
+            <!--<label>Descrição Detalhada<br/><small>Entre com uma descrição para o anúncio.</small></label>-->
+            <div style="border: 1px solid #d0d0d0; border-radius: 5px; padding: 5px; background-color: #fff; margin-bottom: 10px;">
+              <div id="textEditorToolBar">
+                <div style="display: inline-table; margin-right: 8px;">
+                  <button id="etbBold" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-bold"></i></button>
+                  <button id="etbItalic" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-italic"></i></button>
+                  <button id="etbUnderline" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-underline"></i></button>
+                </div>
+                <div style="display: inline-table; margin-right: 8px;">
+                  <button id="etbTextAlignLeft" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-align-left"></i></button>
+                  <button id="etbTextAlignCenter" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-align-center"></i></button>
+                </div>
+                <div style="display: inline-table; margin-right: 8px;">
+                  <button id="etbListUl" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-list-ul"></i></button>
+                </div>
+                <div style="display: inline-table; margin-right: 8px;">
+                  <button id="etbLink" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-link"></i></button>
+                  <button id="etbUnlink" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-unlink"></i></button>
+                </div>
+                <div style="display: inline-table; margin-right: 8px;">
+                  <button id="etbUndo" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-undo"></i></button>
+                  <button id="etbRedo" type="button" style="width: 30px; height: 30px; border: none; background-color: #fff; margin-right: 2px;"><i class="fas fa-redo"></i></button>
+                </div>
+              </div>
+              <div id="textEditor" contenteditable="true" style="overflow: auto; display: block; width: 100%; height: 200px; background-color: rgba(240,240,240,0.4); padding: 5px 10px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert clearfix" id="alert" role="alert" style="display: none"></div>
+
+        <div class="col1-to30-xs form-group" >
+
+          <button type="submit" class="btn btn-default submit" disabled>Save Promotion</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

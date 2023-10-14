@@ -1,0 +1,56 @@
+#aboutPage .header {
+  border-bottom: 1px solid #6bafd4;
+  margin: 20px 0; }
+  #aboutPage .header p {
+    margin: 0;
+    float: left;
+    width: 50px;
+    height: 50px;
+    background: #6bafd4;
+    display: table; }
+    #aboutPage .header p i {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      font-size: 1.5em;
+      color: white; }
+  #aboutPage .header .addAdvert {
+    float: right;
+    margin-top: 15px;
+    background: transparent;
+    border: 1px solid transparent; }
+    #aboutPage .header .addAdvert i {
+      color: green;
+      font-size: 1.5em;
+      cursor: pointer; }
+#aboutPage h6 {
+  font: 400 1.8em "Tahoma";
+  text-align: center;
+  color: grey;
+  margin-bottom: 30px; }
+#aboutPage p {
+  font: 300 1em "Arial";
+  color: #a4a4a4;
+  margin-bottom: 8px; }
+  #aboutPage p div {
+    font: 300 1.2em "Arial";
+    color: #a4a4a4; }
+#aboutPage textarea {
+  width: 100%;
+  border: 1px solid #cccccc;
+  height: 150px;
+  padding: 10px;
+  color: grey; }
+#aboutPage input[type=submit] {
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  background: #78c4ed;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 15px; }
+  #aboutPage input[type=submit]:hover {
+    transition: 0.3s;
+    background: #63a1c3; }
+
+/*# sourceMappingURL=about.css.map */
