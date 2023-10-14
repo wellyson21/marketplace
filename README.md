@@ -3,4 +3,4 @@
 ### CMS e a Dashboard dos usuários contruida com AngularJs
 
 ## Sistema de Autentificação e Recuperação de senha
-## Usando o firebase
+## Usando o HTML, CSS, Javascript, Angular, PHP, Firebase
