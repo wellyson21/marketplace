@@ -34,7 +34,7 @@
     /**** Firestore Settings *****/
     $GLOBALS['settingsFirestore'] = [
       'projectId' => 'madefrio-977a2',
-      'keyPath' => __DIR__ . '/_system/_php/_json/madefrio-977a2-68d22d27cc44.json'
+      'keyPath' => __DIR__ . '/_system/_php/_json/file.json'
     ];
 
     /******* autoload ************/
